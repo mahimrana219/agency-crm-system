@@ -59,7 +59,7 @@ export default function Team() {
         </div>
         <button
           onClick={() => setShowModal(true)}
-          className="flex items-center gap-1.5 px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl shadow-md shadow-emerald-200 transition-all cursor-pointer active:scale-95 self-start sm:self-auto"
+          className="flex items-center gap-1.5 px-4 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-xl shadow-md shadow-indigo-200 transition-all cursor-pointer active:scale-95 self-start sm:self-auto"
         >
           <IconPlus size={16} /> Add Team Member
         </button>
@@ -86,13 +86,13 @@ export default function Team() {
                     {/* Member Name & Avatar */}
                     <td className="py-3.5 px-4">
                       <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-full bg-emerald-600 text-white font-black text-xs flex items-center justify-center shrink-0 shadow-xs">
+                        <div className="w-8 h-8 rounded-full bg-indigo-600 text-white font-black text-xs flex items-center justify-center shrink-0 shadow-xs">
                           {member.name.charAt(0).toUpperCase()}
                         </div>
                         <div>
                           <span className="font-bold text-gray-900">{member.name}</span>
                           {member.isUser && (
-                            <span className="ml-1.5 text-[10px] font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded">
+                            <span className="ml-1.5 text-[10px] font-bold text-indigo-600 bg-indigo-50 px-1.5 py-0.5 rounded">
                               (You)
                             </span>
                           )}
@@ -111,10 +111,10 @@ export default function Team() {
                         member.role === 'Owner' 
                           ? 'bg-purple-50 text-purple-700 border border-purple-200' 
                           : member.role === 'Developer'
-                          ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
+                          ? 'bg-indigo-50 text-indigo-700 border border-indigo-200'
                           : member.role === 'Sales'
                           ? 'bg-blue-50 text-blue-700 border border-blue-200'
-                          : 'bg-amber-50 text-amber-700 border border-amber-200'
+                          : 'bg-indigo-50 text-indigo-700 border border-indigo-200'
                       }`}>
                         {member.role}
                       </span>
@@ -182,7 +182,7 @@ export default function Team() {
                     placeholder="e.g. Usman Ali"
                     value={newMember.name}
                     onChange={(e) => setNewMember({...newMember, name: e.target.value})}
-                    className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-xs text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500"
+                    className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-xs text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500"
                   />
                 </div>
               </div>
@@ -197,7 +197,7 @@ export default function Team() {
                     placeholder="e.g. usman@example.com"
                     value={newMember.email}
                     onChange={(e) => setNewMember({...newMember, email: e.target.value})}
-                    className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-xs text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500"
+                    className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-xs text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500"
                   />
                 </div>
               </div>
@@ -209,7 +209,7 @@ export default function Team() {
                   <select
                     value={newMember.role}
                     onChange={(e) => setNewMember({...newMember, role: e.target.value})}
-                    className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-xs text-gray-900 focus:outline-none focus:border-emerald-500 cursor-pointer"
+                    className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-xs text-gray-900 focus:outline-none focus:border-indigo-500 cursor-pointer"
                   >
                     <option value="Developer">Developer</option>
                     <option value="Sales">Sales</option>
@@ -229,7 +229,7 @@ export default function Team() {
                 </button>
                 <button 
                   type="submit"
-                  className="px-5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl shadow-md shadow-emerald-200 transition-colors cursor-pointer"
+                  className="px-5 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-xl shadow-md shadow-indigo-200 transition-colors cursor-pointer"
                 >
                   Add Member
                 </button>

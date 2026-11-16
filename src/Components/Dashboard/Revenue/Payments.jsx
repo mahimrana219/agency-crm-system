@@ -69,7 +69,7 @@ export default function Payments() {
 
           <button 
             onClick={() => handleOpenModal('Income')}
-            className="flex items-center gap-1.5 px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl shadow-md shadow-emerald-200 transition-all cursor-pointer active:scale-95"
+            className="flex items-center gap-1.5 px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-xl shadow-md shadow-indigo-200 transition-all cursor-pointer active:scale-95"
           >
             <IconPlus size={16} /> Add Payment
           </button>
@@ -82,13 +82,13 @@ export default function Payments() {
         {/* This month payments received (Income) */}
         <div 
           onClick={() => handleFilterClick('Income')}
-          className="p-5 bg-white rounded-3xl border border-gray-100 shadow-xs flex items-center justify-between cursor-pointer hover:border-emerald-300 transition-all group"
+          className="p-5 bg-white rounded-3xl border border-gray-100 shadow-xs flex items-center justify-between cursor-pointer hover:border-indigo-300 transition-all group"
         >
           <div>
-            <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wider group-hover:text-emerald-600 transition-colors">This month received</p>
+            <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wider group-hover:text-indigo-600 transition-colors">This month received</p>
             <p className="text-lg font-black text-gray-900 mt-1">$0</p>
           </div>
-          <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center border border-emerald-100">
+          <div className="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center border border-indigo-100">
             <IconArrowDownLeft size={20} />
           </div>
         </div>
@@ -96,13 +96,13 @@ export default function Payments() {
         {/* Total expenses this month (Expense) */}
         <div 
           onClick={() => handleFilterClick('Expenses')}
-          className="p-5 bg-white rounded-3xl border border-gray-100 shadow-xs flex items-center justify-between cursor-pointer hover:border-amber-300 transition-all group"
+          className="p-5 bg-white rounded-3xl border border-gray-100 shadow-xs flex items-center justify-between cursor-pointer hover:border-indigo-300 transition-all group"
         >
           <div>
-            <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wider group-hover:text-amber-600 transition-colors">Expenses (this month)</p>
+            <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wider group-hover:text-indigo-600 transition-colors">Expenses (this month)</p>
             <p className="text-lg font-black text-gray-900 mt-1">$0</p>
           </div>
-          <div className="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center border border-amber-100">
+          <div className="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center border border-indigo-100">
             <IconArrowUpRight size={20} />
           </div>
         </div>
@@ -110,13 +110,13 @@ export default function Payments() {
         {/* Overall client payments received (Income) */}
         <div 
           onClick={() => handleFilterClick('Income')}
-          className="p-5 bg-white rounded-3xl border border-gray-100 shadow-xs flex items-center justify-between cursor-pointer hover:border-emerald-300 transition-all group"
+          className="p-5 bg-white rounded-3xl border border-gray-100 shadow-xs flex items-center justify-between cursor-pointer hover:border-indigo-300 transition-all group"
         >
           <div>
-            <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wider group-hover:text-emerald-600 transition-colors">Overall received</p>
-            <p className="text-lg font-black text-emerald-600 mt-1">$0</p>
+            <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wider group-hover:text-indigo-600 transition-colors">Overall received</p>
+            <p className="text-lg font-black text-indigo-600 mt-1">$0</p>
           </div>
-          <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center border border-emerald-100">
+          <div className="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center border border-indigo-100">
             <IconArrowDownLeft size={20} />
           </div>
         </div>
@@ -151,7 +151,7 @@ export default function Payments() {
         </div>
 
         {/* Graph Visual Area */}
-        <div className="h-48 w-full bg-linear-to-b from-emerald-50/40 to-transparent rounded-2xl border border-emerald-100/50 p-4 flex flex-col justify-end relative overflow-hidden">
+        <div className="h-48 w-full bg-linear-to-b from-indigo-50/40 to-transparent rounded-2xl border border-indigo-100/50 p-4 flex flex-col justify-end relative overflow-hidden">
           <div className="absolute inset-0 flex flex-col justify-between p-4 pointer-events-none opacity-40">
             <div className="border-b border-dashed border-gray-200 w-full"></div>
             <div className="border-b border-dashed border-gray-200 w-full"></div>
@@ -162,8 +162,8 @@ export default function Payments() {
             <svg className="w-full h-full overflow-visible" viewBox="0 0 500 100" preserveAspectRatio="none">
               <defs>
                 <linearGradient id="colorGradient" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#10b981" stopOpacity="0.4" />
-                  <stop offset="100%" stopColor="#10b981" stopOpacity="0.0" />
+                  <stop offset="0%" stopColor="#6366F1" stopOpacity="0.4" />
+                  <stop offset="100%" stopColor="#6366F1" stopOpacity="0.0" />
                 </linearGradient>
               </defs>
               <path d="M 0,80 Q 80,40 160,60 T 320,30 T 420,70 L 500,50 L 500,100 L 0,100 Z" fill="url(#colorGradient)" />
@@ -210,7 +210,7 @@ export default function Payments() {
 
         {/* Empty State */}
         <div className="p-20 text-center flex flex-col items-center justify-center">
-          <div className="w-14 h-14 rounded-2xl bg-emerald-50 flex items-center justify-center text-emerald-600 mb-4 border border-emerald-100 shadow-2xs">
+          <div className="w-14 h-14 rounded-2xl bg-indigo-50 flex items-center justify-center text-indigo-600 mb-4 border border-indigo-100 shadow-2xs">
             <IconCurrencyDollar size={28} />
           </div>
           <h4 className="text-sm font-black text-gray-900 mb-1">
@@ -223,7 +223,7 @@ export default function Payments() {
           <div className="flex items-center gap-2.5">
             <button 
               onClick={() => handleOpenModal('Income')}
-              className="flex items-center gap-1.5 px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl shadow-md shadow-emerald-200 transition-all cursor-pointer active:scale-95"
+              className="flex items-center gap-1.5 px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-xl shadow-md shadow-indigo-200 transition-all cursor-pointer active:scale-95"
             >
               <IconPlus size={16} /> Add Income
             </button>
@@ -263,7 +263,7 @@ export default function Payments() {
                   type="button"
                   onClick={() => setPaymentData({...paymentData, type: 'Income'})}
                   className={`py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
-                    paymentData.type === 'Income' ? 'bg-emerald-600 text-white shadow-xs' : 'text-gray-600 hover:bg-gray-200/50'
+                    paymentData.type === 'Income' ? 'bg-indigo-600 text-white shadow-xs' : 'text-gray-600 hover:bg-gray-200/50'
                   }`}
                 >
                   Incoming Income (+)
@@ -290,7 +290,7 @@ export default function Payments() {
                       placeholder="0.00"
                       value={paymentData.amount}
                       onChange={(e) => setPaymentData({...paymentData, amount: e.target.value})}
-                      className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500"
+                      className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500"
                     />
                   </div>
                 </div>
@@ -303,7 +303,7 @@ export default function Payments() {
                       required
                       value={paymentData.date}
                       onChange={(e) => setPaymentData({...paymentData, date: e.target.value})}
-                      className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 focus:outline-none focus:border-emerald-500"
+                      className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 focus:outline-none focus:border-indigo-500"
                     />
                   </div>
                 </div>
@@ -321,7 +321,7 @@ export default function Payments() {
                     placeholder={paymentData.type === 'Income' ? 'e.g. Acme Corp' : 'e.g. Ali Developer / Hosting Provider'}
                     value={paymentData.clientOrVendor}
                     onChange={(e) => setPaymentData({...paymentData, clientOrVendor: e.target.value})}
-                    className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500"
+                    className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500"
                   />
                 </div>
               </div>
@@ -331,7 +331,7 @@ export default function Payments() {
                 <select 
                   value={paymentData.category}
                   onChange={(e) => setPaymentData({...paymentData, category: e.target.value})}
-                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 focus:outline-none focus:border-emerald-500"
+                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 focus:outline-none focus:border-indigo-500"
                 >
                   <option>Project Milestone</option>
                   <option>Monthly Retainer</option>
@@ -348,7 +348,7 @@ export default function Payments() {
                   placeholder="Transaction details..."
                   value={paymentData.notes}
                   onChange={(e) => setPaymentData({...paymentData, notes: e.target.value})}
-                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500 resize-none"
+                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500 resize-none"
                 />
               </div>
 
@@ -363,7 +363,7 @@ export default function Payments() {
                 <button 
                   type="submit"
                   className={`px-6 py-2.5 text-white text-xs font-bold rounded-xl shadow-sm transition-colors cursor-pointer ${
-                    paymentData.type === 'Income' ? 'bg-emerald-600 hover:bg-emerald-700 shadow-emerald-200' : 'bg-rose-600 hover:bg-rose-700 shadow-rose-200'
+                    paymentData.type === 'Income' ? 'bg-indigo-600 hover:bg-indigo-700 shadow-indigo-200' : 'bg-rose-600 hover:bg-rose-700 shadow-rose-200'
                   }`}
                 >
                   Save {paymentData.type}

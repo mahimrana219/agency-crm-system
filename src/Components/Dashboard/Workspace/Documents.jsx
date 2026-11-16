@@ -93,11 +93,11 @@ export default function Documents() {
             onClick={() => handleOpenModal('Proposal')}
             className="flex items-center gap-1.5 px-4 py-2.5 bg-white border border-gray-200 hover:bg-gray-50 text-gray-800 text-xs font-bold rounded-xl shadow-2xs transition-all cursor-pointer active:scale-95"
           >
-            <IconPlus size={15} className="text-emerald-600" /> New Proposal
+            <IconPlus size={15} className="text-indigo-600" /> New Proposal
           </button>
           <button
             onClick={() => handleOpenModal('Contract')}
-            className="flex items-center gap-1.5 px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl shadow-md shadow-emerald-200 transition-all cursor-pointer active:scale-95"
+            className="flex items-center gap-1.5 px-4 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-xl shadow-md shadow-indigo-200 transition-all cursor-pointer active:scale-95"
           >
             <IconPlus size={15} /> New Contract
           </button>
@@ -132,7 +132,7 @@ export default function Documents() {
             onClick={() => setActiveTab(tab)}
             className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer shrink-0 ${
               activeTab === tab 
-                ? 'bg-emerald-600 text-white shadow-xs' 
+                ? 'bg-indigo-600 text-white shadow-xs' 
                 : 'bg-white text-gray-600 hover:bg-gray-50 border border-gray-200/70'
             }`}
           >
@@ -147,16 +147,16 @@ export default function Documents() {
           filteredDocs.map((doc) => (
             <div 
               key={doc.id}
-              className="bg-white p-4 rounded-2xl border border-gray-100 shadow-xs flex items-center justify-between gap-4 w-full hover:border-emerald-200 transition-all"
+              className="bg-white p-4 rounded-2xl border border-gray-100 shadow-xs flex items-center justify-between gap-4 w-full hover:border-indigo-200 transition-all"
             >
               <div className="flex items-start gap-3.5 min-w-0">
-                <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 font-black text-xs flex items-center justify-center shrink-0 border border-emerald-200/60 mt-0.5">
+                <div className="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-700 font-black text-xs flex items-center justify-center shrink-0 border border-indigo-200/60 mt-0.5">
                   <IconFileText size={18} />
                 </div>
                 <div className="min-w-0">
                   <div className="flex items-center gap-2">
                     <span className={`px-2 py-0.5 rounded-md text-[9px] font-black uppercase tracking-wider ${
-                      doc.type === 'Contract' ? 'bg-emerald-50 text-emerald-700 border border-emerald-200' : 'bg-blue-50 text-blue-700 border border-blue-200'
+                      doc.type === 'Contract' ? 'bg-indigo-50 text-indigo-700 border border-indigo-200' : 'bg-blue-50 text-blue-700 border border-blue-200'
                     }`}>
                       {doc.type}
                     </span>
@@ -169,7 +169,7 @@ export default function Documents() {
 
               <div className="flex items-center gap-3 shrink-0">
                 <span className={`px-2.5 py-1 rounded-lg text-[10px] font-bold ${
-                  doc.status === 'Signed' ? 'bg-emerald-50 text-emerald-700 border border-emerald-200' :
+                  doc.status === 'Signed' ? 'bg-indigo-50 text-indigo-700 border border-indigo-200' :
                   doc.status === 'Sent' ? 'bg-blue-50 text-blue-700 border border-blue-200' :
                   'bg-gray-100 text-gray-600'
                 }`}>
@@ -219,7 +219,7 @@ export default function Documents() {
                   placeholder="e.g. Mobile App Development Agreement"
                   value={newDoc.title}
                   onChange={(e) => setNewDoc({...newDoc, title: e.target.value})}
-                  className="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl text-xs text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500"
+                  className="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl text-xs text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500"
                 />
               </div>
 
@@ -232,7 +232,7 @@ export default function Documents() {
                     placeholder="e.g. Dr. Zahid"
                     value={newDoc.client}
                     onChange={(e) => setNewDoc({...newDoc, client: e.target.value})}
-                    className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-xs text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500"
+                    className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-xs text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500"
                   />
                 </div>
               </div>
@@ -244,7 +244,7 @@ export default function Documents() {
                   placeholder="e.g. 1500"
                   value={newDoc.amount}
                   onChange={(e) => setNewDoc({...newDoc, amount: e.target.value})}
-                  className="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl text-xs text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500"
+                  className="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl text-xs text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500"
                 />
               </div>
 
@@ -258,7 +258,7 @@ export default function Documents() {
                 </button>
                 <button 
                   type="submit"
-                  className="px-5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl shadow-md shadow-emerald-200 transition-colors cursor-pointer"
+                  className="px-5 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-xl shadow-md shadow-indigo-200 transition-colors cursor-pointer"
                 >
                   Save as Draft
                 </button>

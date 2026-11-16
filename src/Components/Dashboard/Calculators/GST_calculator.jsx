@@ -7,7 +7,7 @@ import {
 
 export default function GST_calculator() {
   const [logo, setLogo] = useState(null);
-  const [agencyInfo, setAgencyInfo] = useState('Meer Tech Solution\nSoftware & Web Development Agency\ncontact@meertech.com');
+  const [agencyInfo, setAgencyInfo] = useState('Agency Solutions\nSoftware & Web Development Agency\ncontact@meertech.com');
   const [documentId, setDocumentId] = useState('GST-2026-001');
   const [date, setDate] = useState(new Date().toISOString().split('T')[0]);
   const [currency, setCurrency] = useState('$');
@@ -46,7 +46,7 @@ export default function GST_calculator() {
     const element = documentRef.current;
     const opt = {
       margin: 0.3,
-      filename: `GST-Tax-Calculation-${documentId || 'MeerTech'}.pdf`,
+      filename: `GST-Tax-Calculation-${documentId || 'AgencySolutions'}.pdf`,
       image: { type: 'jpeg', quality: 0.98 },
       html2canvas: { scale: 2, useCORS: true },
       jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
@@ -55,31 +55,31 @@ export default function GST_calculator() {
   };
 
   return (
-    <div className="p-4 sm:p-8 max-w-5xl mx-auto flex flex-col gap-8 bg-gray-100 min-h-screen text-gray-900 font-sans caret-emerald-600">
+    <div className="p-4 sm:p-8 max-w-5xl mx-auto flex flex-col gap-8 bg-gray-100 min-h-screen text-gray-900 font-sans caret-indigo-600">
       
       {/* TOP CONTROLS BAR */}
       <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="bg-white p-5 rounded-3xl border border-gray-200 shadow-sm space-y-3">
-          <h3 className="text-xs font-bold uppercase tracking-wider text-emerald-600 flex items-center gap-1.5">
+          <h3 className="text-xs font-bold uppercase tracking-wider text-indigo-600 flex items-center gap-1.5">
             <IconFileText size={16} /> Actions
           </h3>
           <button 
             onClick={handleDownloadPDF}
-            className="w-full bg-emerald-600 hover:bg-emerald-500 text-white p-3.5 rounded-2xl font-bold text-sm flex items-center justify-center gap-2 shadow-md transition-all cursor-pointer"
+            className="w-full bg-indigo-600 hover:bg-indigo-500 text-white p-3.5 rounded-2xl font-bold text-sm flex items-center justify-center gap-2 shadow-md transition-all cursor-pointer"
           >
             <IconDownload size={18} /> Download Tax Summary PDF
           </button>
         </div>
 
         <div className="bg-white p-5 rounded-3xl border border-gray-200 shadow-sm space-y-4">
-          <h3 className="text-xs font-bold uppercase tracking-wider text-emerald-600">Preferences</h3>
+          <h3 className="text-xs font-bold uppercase tracking-wider text-indigo-600">Preferences</h3>
           <div className="grid grid-cols-2 gap-3">
             <div>
               <label className="text-xs font-semibold text-gray-700 block mb-1">Currency</label>
               <select 
                 value={currency} 
                 onChange={(e) => setCurrency(e.target.value)}
-                className="w-full p-2 border border-gray-300 rounded-xl text-xs focus:outline-none focus:border-emerald-600 bg-white font-medium"
+                className="w-full p-2 border border-gray-300 rounded-xl text-xs focus:outline-none focus:border-indigo-600 bg-white font-medium"
               >
                 <option value="$">USD ($)</option>
                 <option value="€">EUR (€)</option>
@@ -93,7 +93,7 @@ export default function GST_calculator() {
                 type="text"
                 value={documentId}
                 onChange={(e) => setDocumentId(e.target.value)}
-                className="w-full p-2 border border-gray-300 rounded-xl text-xs focus:outline-none focus:border-emerald-600 bg-white font-bold"
+                className="w-full p-2 border border-gray-300 rounded-xl text-xs focus:outline-none focus:border-indigo-600 bg-white font-bold"
               />
             </div>
           </div>
@@ -111,7 +111,7 @@ export default function GST_calculator() {
                 <img src={logo} alt="Logo" className="w-full h-full object-cover" />
               ) : (
                 <label className="cursor-pointer text-center p-2">
-                  <IconCloudUpload size={22} className="mx-auto mb-1 text-emerald-600" />
+                  <IconCloudUpload size={22} className="mx-auto mb-1 text-indigo-600" />
                   <span className="text-[10px] font-bold text-gray-600">+ Add Logo</span>
                   <input type="file" accept="image/*" onChange={handleLogoChange} className="hidden" />
                 </label>
@@ -120,7 +120,7 @@ export default function GST_calculator() {
 
             <div className="text-left sm:text-right w-full sm:w-auto">
               <h1 className="text-2xl font-black uppercase tracking-tight text-gray-900">GST / Tax Calculator</h1>
-              <p className="text-xs font-bold text-emerald-600 mt-1">Meer Tech Solution Financial Tool</p>
+              <p className="text-xs font-bold text-indigo-600 mt-1">Agency Solutions Financial Tool</p>
               <p className="text-xs text-gray-400 mt-1">Date: {date}</p>
             </div>
           </div>
@@ -130,25 +130,25 @@ export default function GST_calculator() {
             
             <div className="bg-gray-50/50 p-4 rounded-2xl border border-gray-100 space-y-2">
               <label className="text-xs font-bold uppercase tracking-wider text-gray-600 flex items-center gap-1.5">
-                <IconReceipt size={16} className="text-emerald-600" /> Amount
+                <IconReceipt size={16} className="text-indigo-600" /> Amount
               </label>
               <input 
                 type="number"
                 value={baseAmount}
                 onChange={(e) => setBaseAmount(e.target.value)}
-                className="w-full p-2.5 border border-gray-200 rounded-xl text-xs font-bold bg-white text-gray-900 focus:outline-none focus:border-emerald-600"
+                className="w-full p-2.5 border border-gray-200 rounded-xl text-xs font-bold bg-white text-gray-900 focus:outline-none focus:border-indigo-600"
               />
             </div>
 
             <div className="bg-gray-50/50 p-4 rounded-2xl border border-gray-100 space-y-2">
               <label className="text-xs font-bold uppercase tracking-wider text-gray-600 flex items-center gap-1.5">
-                <IconPercentage size={16} className="text-emerald-600" /> GST Rate (%)
+                <IconPercentage size={16} className="text-indigo-600" /> GST Rate (%)
               </label>
               <input 
                 type="number"
                 value={gstRate}
                 onChange={(e) => setGstRate(e.target.value)}
-                className="w-full p-2.5 border border-gray-200 rounded-xl text-xs font-bold bg-white text-gray-900 focus:outline-none focus:border-emerald-600"
+                className="w-full p-2.5 border border-gray-200 rounded-xl text-xs font-bold bg-white text-gray-900 focus:outline-none focus:border-indigo-600"
               />
             </div>
 
@@ -157,7 +157,7 @@ export default function GST_calculator() {
               <select 
                 value={calculationType}
                 onChange={(e) => setCalculationType(e.target.value)}
-                className="w-full p-2.5 border border-gray-200 rounded-xl text-xs font-bold bg-white text-gray-900 focus:outline-none focus:border-emerald-600"
+                className="w-full p-2.5 border border-gray-200 rounded-xl text-xs font-bold bg-white text-gray-900 focus:outline-none focus:border-indigo-600"
               >
                 <option value="exclusive">Exclusive (Add Tax)</option>
                 <option value="inclusive">Inclusive (Extract Tax)</option>
@@ -168,7 +168,7 @@ export default function GST_calculator() {
 
           {/* RESULTS DISPLAY PANEL */}
           <div className="bg-linear-to-br from-gray-900 to-gray-800 text-white p-6 sm:p-8 rounded-3xl space-y-6 shadow-lg">
-            <h3 className="text-xs font-extrabold uppercase tracking-widest text-emerald-400 flex items-center gap-2">
+            <h3 className="text-xs font-extrabold uppercase tracking-widest text-indigo-400 flex items-center gap-2">
               <IconCalculator size={18} /> Tax Breakdown Summary
             </h3>
 
@@ -180,7 +180,7 @@ export default function GST_calculator() {
 
               <div className="space-y-1 border-b sm:border-b-0 sm:border-r border-gray-700 pb-4 sm:pb-0 sm:pr-4">
                 <p className="text-[11px] font-semibold text-gray-400 uppercase tracking-wider">GST / Tax Amount ({gstRate}%)</p>
-                <p className="text-2xl sm:text-3xl font-black text-emerald-400">{currency}{taxAmount.toFixed(2)}</p>
+                <p className="text-2xl sm:text-3xl font-black text-indigo-400">{currency}{taxAmount.toFixed(2)}</p>
               </div>
 
               <div className="space-y-1">
@@ -192,7 +192,7 @@ export default function GST_calculator() {
 
           {/* Sign-off / Footer */}
           <div className="pt-6 border-t border-gray-100 flex justify-between items-center text-xs text-gray-500">
-            <p>Meer Tech Solution Tax Calculator Tool</p>
+            <p>Agency Solutions Tax Calculator Tool</p>
             <p className="font-bold text-gray-700">Accurate & Verified</p>
           </div>
 

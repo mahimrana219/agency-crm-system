@@ -7,7 +7,7 @@ import {
 
 export default function InvoiceCreate() {
   const [logo, setLogo] = useState(null);
-  const [from, setFrom] = useState('Meer Tech Solution\nSoftware & Web Development Agency\ncontact@meertech.com');
+  const [from, setFrom] = useState('Agency Solutions\nSoftware & Web Development Agency\ncontact@meertech.com');
   const [billTo, setBillTo] = useState('');
   const [invoiceNumber, setInvoiceNumber] = useState('INV-2026-001');
   const [date, setDate] = useState(new Date().toISOString().split('T')[0]);
@@ -29,7 +29,7 @@ export default function InvoiceCreate() {
   const [shippingVal, setShippingVal] = useState(0);
   const [shipToAddress, setShipToAddress] = useState('');
   const [amountPaid, setAmountPaid] = useState(0);
-  const [notes, setNotes] = useState('Thank you for your business with Meer Tech Solution.');
+  const [notes, setNotes] = useState('Thank you for your business with Agency Solutions.');
   const [terms, setTerms] = useState('Please pay within the stipulated payment terms.');
 
   const [items, setItems] = useState([
@@ -70,7 +70,7 @@ export default function InvoiceCreate() {
     const element = invoiceRef.current;
     const opt = {
       margin: 0.3,
-      filename: `${invoiceType}-${invoiceNumber || 'MeerTech'}.pdf`,
+      filename: `${invoiceType}-${invoiceNumber || 'AgencySolutions'}.pdf`,
       image: { type: 'jpeg', quality: 0.98 },
       html2canvas: { scale: 2, useCORS: true },
       jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
@@ -114,10 +114,10 @@ export default function InvoiceCreate() {
         
         {/* Actions Box */}
         <div className="bg-white p-5 rounded-3xl border border-gray-200 shadow-sm space-y-3">
-          <h3 className="text-xs font-bold uppercase tracking-wider text-emerald-600">Actions</h3>
+          <h3 className="text-xs font-bold uppercase tracking-wider text-indigo-600">Actions</h3>
           <button 
             onClick={handleDownloadPDF}
-            className="w-full bg-emerald-600 hover:bg-emerald-500 text-white p-3.5 rounded-2xl font-bold text-sm flex items-center justify-center gap-2 shadow-md transition-all cursor-pointer"
+            className="w-full bg-indigo-600 hover:bg-indigo-500 text-white p-3.5 rounded-2xl font-bold text-sm flex items-center justify-center gap-2 shadow-md transition-all cursor-pointer"
           >
             <IconDownload size={18} /> Download PDF
           </button>
@@ -132,14 +132,14 @@ export default function InvoiceCreate() {
 
         {/* Preferences */}
         <div className="bg-white p-5 rounded-3xl border border-gray-200 shadow-sm space-y-4">
-          <h3 className="text-xs font-bold uppercase tracking-wider text-emerald-600">Preferences</h3>
+          <h3 className="text-xs font-bold uppercase tracking-wider text-indigo-600">Preferences</h3>
           
           <div>
             <label className="text-xs font-semibold text-gray-700 block mb-1.5">Currency</label>
             <select 
               value={currency} 
               onChange={(e) => setCurrency(e.target.value)}
-              className="w-full p-2.5 border border-gray-300 rounded-xl text-sm focus:outline-none focus:border-emerald-600 bg-white font-medium text-gray-800"
+              className="w-full p-2.5 border border-gray-300 rounded-xl text-sm focus:outline-none focus:border-indigo-600 bg-white font-medium text-gray-800"
             >
               <option value="$">USD ($)</option>
               <option value="€">EUR (€)</option>
@@ -153,7 +153,7 @@ export default function InvoiceCreate() {
             <select 
               value={invoiceType} 
               onChange={(e) => setInvoiceType(e.target.value)}
-              className="w-full p-2.5 border border-gray-300 rounded-xl text-sm focus:outline-none focus:border-emerald-600 bg-white font-medium text-gray-800"
+              className="w-full p-2.5 border border-gray-300 rounded-xl text-sm focus:outline-none focus:border-indigo-600 bg-white font-medium text-gray-800"
             >
               <option value="Invoice">Invoice</option>
               <option value="Quotation">Quotation</option>
@@ -165,14 +165,14 @@ export default function InvoiceCreate() {
 
         {/* Dynamic Toggles */}
         <div className="bg-white p-5 rounded-3xl border border-gray-200 shadow-sm space-y-3">
-          <h3 className="text-xs font-bold uppercase tracking-wider text-emerald-600">Toggle Fields</h3>
+          <h3 className="text-xs font-bold uppercase tracking-wider text-indigo-600">Toggle Fields</h3>
           
           <label className="flex items-center gap-3 text-sm text-gray-700 cursor-pointer font-medium pt-1">
             <input 
               type="checkbox" 
               checked={toggles.tax} 
               onChange={(e) => setToggles({...toggles, tax: e.target.checked})}
-              className="w-4 h-4 accent-emerald-600 rounded"
+              className="w-4 h-4 accent-indigo-600 rounded"
             />
             Tax Field
           </label>
@@ -182,7 +182,7 @@ export default function InvoiceCreate() {
               type="checkbox" 
               checked={toggles.discount} 
               onChange={(e) => setToggles({...toggles, discount: e.target.checked})}
-              className="w-4 h-4 accent-emerald-600 rounded"
+              className="w-4 h-4 accent-indigo-600 rounded"
             />
             Discount Field
           </label>
@@ -192,7 +192,7 @@ export default function InvoiceCreate() {
               type="checkbox" 
               checked={toggles.shipping} 
               onChange={(e) => setToggles({...toggles, shipping: e.target.checked})}
-              className="w-4 h-4 accent-emerald-600 rounded"
+              className="w-4 h-4 accent-indigo-600 rounded"
             />
             Shipping Field
           </label>
@@ -202,7 +202,7 @@ export default function InvoiceCreate() {
               type="checkbox" 
               checked={toggles.shipTo} 
               onChange={(e) => setToggles({...toggles, shipTo: e.target.checked})}
-              className="w-4 h-4 accent-emerald-600 rounded"
+              className="w-4 h-4 accent-indigo-600 rounded"
             />
             Ship To Address
           </label>
@@ -213,7 +213,7 @@ export default function InvoiceCreate() {
       {/* QUICK SELECT CLIENT DROPDOWN BAR */}
       <div className="bg-white p-5 rounded-3xl border border-gray-200 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div className="flex items-center gap-3">
-          <div className="p-2.5 bg-emerald-50 text-emerald-600 rounded-xl">
+          <div className="p-2.5 bg-indigo-50 text-indigo-600 rounded-xl">
             <IconUserCheck size={20} />
           </div>
           <div>
@@ -230,7 +230,7 @@ export default function InvoiceCreate() {
               setBillTo(found.details);
             }
           }}
-          className="w-full sm:w-72 p-2.5 border border-gray-300 rounded-xl text-xs focus:outline-none focus:border-emerald-600 bg-gray-50 font-semibold text-gray-800 cursor-pointer"
+          className="w-full sm:w-72 p-2.5 border border-gray-300 rounded-xl text-xs focus:outline-none focus:border-indigo-600 bg-gray-50 font-semibold text-gray-800 cursor-pointer"
         >
           <option value="">-- Choose from Directory --</option>
           {savedClients.map((client) => (
@@ -245,7 +245,7 @@ export default function InvoiceCreate() {
       <div className="w-full bg-white p-6 sm:p-12 rounded-3xl border border-gray-200 shadow-xl">
         <div className="flex justify-between items-center mb-6 border-b border-gray-100 pb-4">
           <h2 className="text-xs font-bold uppercase tracking-wider text-gray-500">Live Preview & Editor</h2>
-          <span className="text-xs text-emerald-700 font-semibold bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">Auto-Updating</span>
+          <span className="text-xs text-indigo-700 font-semibold bg-indigo-50 px-3 py-1 rounded-full border border-indigo-200">Auto-Updating</span>
         </div>
 
         {/* Printable White Paper Preview Box */}
@@ -258,7 +258,7 @@ export default function InvoiceCreate() {
                 <img src={logo} alt="Logo" className="w-full h-full object-cover" />
               ) : (
                 <label className="cursor-pointer text-center p-2">
-                  <IconCloudUpload size={22} className="mx-auto mb-1 text-emerald-600" />
+                  <IconCloudUpload size={22} className="mx-auto mb-1 text-indigo-600" />
                   <span className="text-[10px] font-bold text-gray-600">+ Add Logo</span>
                   <input type="file" accept="image/*" onChange={handleLogoChange} className="hidden" />
                 </label>
@@ -273,7 +273,7 @@ export default function InvoiceCreate() {
                   type="text" 
                   value={invoiceNumber} 
                   onChange={(e) => setInvoiceNumber(e.target.value)} 
-                  className="w-32 sm:text-right border-b border-gray-200 focus:border-emerald-600 focus:outline-none font-bold text-sm text-gray-900 bg-transparent"
+                  className="w-32 sm:text-right border-b border-gray-200 focus:border-indigo-600 focus:outline-none font-bold text-sm text-gray-900 bg-transparent"
                 />
               </div>
             </div>
@@ -287,7 +287,7 @@ export default function InvoiceCreate() {
                 rows="3" 
                 value={from} 
                 onChange={(e) => setFrom(e.target.value)}
-                className="w-full p-3 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-emerald-600 bg-gray-50/50 resize-none font-medium text-gray-800"
+                className="w-full p-3 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-indigo-600 bg-gray-50/50 resize-none font-medium text-gray-800"
               />
             </div>
 
@@ -320,7 +320,7 @@ export default function InvoiceCreate() {
                 placeholder="Client Name, Company, Address..." 
                 value={billTo} 
                 onChange={(e) => setBillTo(e.target.value)}
-                className="w-full p-3 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-emerald-600 bg-gray-50/50 resize-none font-medium text-gray-800"
+                className="w-full p-3 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-indigo-600 bg-gray-50/50 resize-none font-medium text-gray-800"
               />
             </div>
 
@@ -332,7 +332,7 @@ export default function InvoiceCreate() {
                   placeholder="Shipping destination address..." 
                   value={shipToAddress} 
                   onChange={(e) => setShipToAddress(e.target.value)}
-                  className="w-full p-3 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-emerald-600 bg-gray-50/50 resize-none font-medium text-gray-800"
+                  className="w-full p-3 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-indigo-600 bg-gray-50/50 resize-none font-medium text-gray-800"
                 />
               </div>
             )}
@@ -356,7 +356,7 @@ export default function InvoiceCreate() {
                       placeholder="Service description..." 
                       value={item.description}
                       onChange={(e) => handleItemChange(index, 'description', e.target.value)}
-                      className="w-full p-3 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-emerald-600 bg-gray-50/30 font-medium text-gray-800"
+                      className="w-full p-3 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-indigo-600 bg-gray-50/30 font-medium text-gray-800"
                     />
                   </div>
                   <div className="col-span-2">
@@ -364,7 +364,7 @@ export default function InvoiceCreate() {
                       type="number" 
                       value={item.quantity}
                       onChange={(e) => handleItemChange(index, 'quantity', e.target.value)}
-                      className="w-full p-3 border border-gray-200 rounded-xl text-xs text-center focus:outline-none focus:border-emerald-600 bg-gray-50/30 font-medium text-gray-800"
+                      className="w-full p-3 border border-gray-200 rounded-xl text-xs text-center focus:outline-none focus:border-indigo-600 bg-gray-50/30 font-medium text-gray-800"
                     />
                   </div>
                   <div className="col-span-2">
@@ -372,7 +372,7 @@ export default function InvoiceCreate() {
                       type="number" 
                       value={item.rate}
                       onChange={(e) => handleItemChange(index, 'rate', e.target.value)}
-                      className="w-full p-3 border border-gray-200 rounded-xl text-xs text-center focus:outline-none focus:border-emerald-600 bg-gray-50/30 font-medium text-gray-800"
+                      className="w-full p-3 border border-gray-200 rounded-xl text-xs text-center focus:outline-none focus:border-indigo-600 bg-gray-50/30 font-medium text-gray-800"
                     />
                   </div>
                   <div className="col-span-2 text-right font-bold text-xs flex items-center justify-end gap-2 pr-1 text-gray-800">
@@ -389,7 +389,7 @@ export default function InvoiceCreate() {
 
             <button 
               onClick={addItem}
-              className="mt-4 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 px-4 py-2.5 rounded-xl text-xs font-bold flex items-center gap-2 cursor-pointer transition-all"
+              className="mt-4 bg-indigo-50 text-indigo-700 hover:bg-indigo-100 px-4 py-2.5 rounded-xl text-xs font-bold flex items-center gap-2 cursor-pointer transition-all"
             >
               <IconPlus size={16} /> Add Line Item
             </button>
@@ -400,11 +400,11 @@ export default function InvoiceCreate() {
             <div className="space-y-4">
               <div>
                 <label className="text-xs font-bold text-gray-500 block mb-1">Notes</label>
-                <textarea rows="2" value={notes} onChange={(e)=>setNotes(e.target.value)} className="w-full p-3 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-emerald-600 bg-gray-50/30 font-medium resize-none text-gray-800" />
+                <textarea rows="2" value={notes} onChange={(e)=>setNotes(e.target.value)} className="w-full p-3 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-indigo-600 bg-gray-50/30 font-medium resize-none text-gray-800" />
               </div>
               <div>
                 <label className="text-xs font-bold text-gray-500 block mb-1">Terms & Conditions</label>
-                <textarea rows="2" value={terms} onChange={(e)=>setTerms(e.target.value)} className="w-full p-3 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-emerald-600 bg-gray-50/30 font-medium resize-none text-gray-800" />
+                <textarea rows="2" value={terms} onChange={(e)=>setTerms(e.target.value)} className="w-full p-3 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-indigo-600 bg-gray-50/30 font-medium resize-none text-gray-800" />
               </div>
             </div>
 
@@ -437,7 +437,7 @@ export default function InvoiceCreate() {
 
               <div className="flex justify-between py-3 border-t border-gray-200 text-base font-black text-gray-900">
                 <span>Total</span>
-                <span className="text-emerald-600">{currency}{total.toFixed(2)}</span>
+                <span className="text-indigo-600">{currency}{total.toFixed(2)}</span>
               </div>
 
               <div className="flex justify-between items-center py-2 border-t border-dashed border-gray-200">
@@ -445,7 +445,7 @@ export default function InvoiceCreate() {
                 <input type="number" value={amountPaid} onChange={(e) => setAmountPaid(e.target.value)} className="w-24 p-1.5 border rounded-lg text-xs text-right font-bold bg-white" />
               </div>
 
-              <div className="flex justify-between py-3 border-t border-gray-200 text-sm font-black text-emerald-800 bg-emerald-50 px-3 rounded-xl">
+              <div className="flex justify-between py-3 border-t border-gray-200 text-sm font-black text-indigo-800 bg-indigo-50 px-3 rounded-xl">
                 <span>Balance Due</span>
                 <span>{currency}{balanceDue.toFixed(2)}</span>
               </div>

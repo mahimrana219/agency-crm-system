@@ -7,7 +7,7 @@ import {
 
 export default function NDA_freelancer() {
   const [logo, setLogo] = useState(null);
-  const [agencyInfo, setAgencyInfo] = useState('Meer Tech Solution\nSoftware & Web Development Agency\ncontact@meertech.com');
+  const [agencyInfo, setAgencyInfo] = useState('Agency Solutions\nSoftware & Web Development Agency\ncontact@meertech.com');
   const [clientInfo, setClientInfo] = useState('');
   const [documentId, setDocumentId] = useState('NDA-2026-001');
   const [date, setDate] = useState(new Date().toISOString().split('T')[0]);
@@ -48,7 +48,7 @@ export default function NDA_freelancer() {
     const element = documentRef.current;
     const opt = {
       margin: 0.3,
-      filename: `NDA-Agreement-${documentId || 'MeerTech'}.pdf`,
+      filename: `NDA-Agreement-${documentId || 'AgencySolutions'}.pdf`,
       image: { type: 'jpeg', quality: 0.98 },
       html2canvas: { scale: 2, useCORS: true },
       jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
@@ -71,19 +71,19 @@ export default function NDA_freelancer() {
   };
 
   return (
-    <div className="p-4 sm:p-8 max-w-5xl mx-auto flex flex-col gap-8 bg-gray-100 min-h-screen text-gray-900 font-sans caret-emerald-600">
+    <div className="p-4 sm:p-8 max-w-5xl mx-auto flex flex-col gap-8 bg-gray-100 min-h-screen text-gray-900 font-sans caret-indigo-600">
       
       {/* TOP SECTION: CONTROLS, ACTIONS & PREFERENCES */}
       <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6">
         
         {/* Actions Box */}
         <div className="bg-white p-5 rounded-3xl border border-gray-200 shadow-sm space-y-3">
-          <h3 className="text-xs font-bold uppercase tracking-wider text-emerald-600 flex items-center gap-1.5">
+          <h3 className="text-xs font-bold uppercase tracking-wider text-indigo-600 flex items-center gap-1.5">
             <IconLock size={16} /> Actions
           </h3>
           <button 
             onClick={handleDownloadPDF}
-            className="w-full bg-emerald-600 hover:bg-emerald-500 text-white p-3.5 rounded-2xl font-bold text-sm flex items-center justify-center gap-2 shadow-md transition-all cursor-pointer"
+            className="w-full bg-indigo-600 hover:bg-indigo-500 text-white p-3.5 rounded-2xl font-bold text-sm flex items-center justify-center gap-2 shadow-md transition-all cursor-pointer"
           >
             <IconDownload size={18} /> Download NDA PDF
           </button>
@@ -98,14 +98,14 @@ export default function NDA_freelancer() {
 
         {/* Section Toggles */}
         <div className="bg-white p-5 rounded-3xl border border-gray-200 shadow-sm space-y-3">
-          <h3 className="text-xs font-bold uppercase tracking-wider text-emerald-600">Document Sections</h3>
+          <h3 className="text-xs font-bold uppercase tracking-wider text-indigo-600">Document Sections</h3>
           
           <label className="flex items-center gap-3 text-sm text-gray-700 cursor-pointer font-medium pt-1">
             <input 
               type="checkbox" 
               checked={toggles.clauses} 
               onChange={(e) => setToggles({...toggles, clauses: e.target.checked})}
-              className="w-4 h-4 accent-emerald-600 rounded"
+              className="w-4 h-4 accent-indigo-600 rounded"
             />
             Confidentiality Clauses Builder
           </label>
@@ -115,7 +115,7 @@ export default function NDA_freelancer() {
               type="checkbox" 
               checked={toggles.signatures} 
               onChange={(e) => setToggles({...toggles, signatures: e.target.checked})}
-              className="w-4 h-4 accent-emerald-600 rounded"
+              className="w-4 h-4 accent-indigo-600 rounded"
             />
             Legal Sign-off Block
           </label>
@@ -127,7 +127,7 @@ export default function NDA_freelancer() {
       <div className="w-full bg-white p-6 sm:p-12 rounded-3xl border border-gray-200 shadow-xl">
         <div className="flex justify-between items-center mb-6 border-b border-gray-100 pb-4">
           <h2 className="text-xs font-bold uppercase tracking-wider text-gray-500">Live NDA Agreement Preview</h2>
-          <span className="text-xs text-emerald-700 font-semibold bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">Confidentiality Document</span>
+          <span className="text-xs text-indigo-700 font-semibold bg-indigo-50 px-3 py-1 rounded-full border border-indigo-200">Confidentiality Document</span>
         </div>
 
         {/* Printable White Paper Preview Box */}
@@ -140,7 +140,7 @@ export default function NDA_freelancer() {
                 <img src={logo} alt="Logo" className="w-full h-full object-cover" />
               ) : (
                 <label className="cursor-pointer text-center p-2">
-                  <IconCloudUpload size={22} className="mx-auto mb-1 text-emerald-600" />
+                  <IconCloudUpload size={22} className="mx-auto mb-1 text-indigo-600" />
                   <span className="text-[10px] font-bold text-gray-600">+ Add Logo</span>
                   <input type="file" accept="image/*" onChange={handleLogoChange} className="hidden" />
                 </label>
@@ -153,7 +153,7 @@ export default function NDA_freelancer() {
                 type="text"
                 value={ndaTitle}
                 onChange={(e) => setNdaTitle(e.target.value)}
-                className="w-full sm:text-right text-xs font-bold text-emerald-600 mt-1 border-b border-transparent focus:border-emerald-600 focus:outline-none bg-transparent"
+                className="w-full sm:text-right text-xs font-bold text-indigo-600 mt-1 border-b border-transparent focus:border-indigo-600 focus:outline-none bg-transparent"
               />
               <div className="flex items-center sm:justify-end gap-2 mt-2">
                 <span className="text-xs font-bold text-gray-400">NDA ID:</span>
@@ -161,7 +161,7 @@ export default function NDA_freelancer() {
                   type="text" 
                   value={documentId} 
                   onChange={(e) => setDocumentId(e.target.value)} 
-                  className="w-32 sm:text-right border-b border-gray-200 focus:border-emerald-600 focus:outline-none font-bold text-sm text-gray-900 bg-transparent"
+                  className="w-32 sm:text-right border-b border-gray-200 focus:border-indigo-600 focus:outline-none font-bold text-sm text-gray-900 bg-transparent"
                 />
               </div>
             </div>
@@ -175,7 +175,7 @@ export default function NDA_freelancer() {
                 rows="3" 
                 value={agencyInfo} 
                 onChange={(e) => setAgencyInfo(e.target.value)}
-                className="w-full p-3 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-emerald-600 bg-gray-50/50 resize-none font-medium text-gray-800"
+                className="w-full p-3 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-indigo-600 bg-gray-50/50 resize-none font-medium text-gray-800"
               />
             </div>
 
@@ -186,7 +186,7 @@ export default function NDA_freelancer() {
                 placeholder="Client Name, Company Name, Email & Legal Address..." 
                 value={clientInfo} 
                 onChange={(e) => setClientInfo(e.target.value)}
-                className="w-full p-3 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-emerald-600 bg-gray-50/50 resize-none font-medium text-gray-800"
+                className="w-full p-3 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-indigo-600 bg-gray-50/50 resize-none font-medium text-gray-800"
               />
             </div>
           </div>
@@ -202,7 +202,7 @@ export default function NDA_freelancer() {
             <div>
               <div className="flex justify-between items-center mb-3">
                 <label className="text-[11px] font-extrabold text-gray-400 uppercase tracking-wider">Confidentiality Clauses & Terms</label>
-                <button onClick={addClause} className="text-emerald-600 hover:text-emerald-700 text-xs font-bold flex items-center gap-1 cursor-pointer">
+                <button onClick={addClause} className="text-indigo-600 hover:text-indigo-700 text-xs font-bold flex items-center gap-1 cursor-pointer">
                   <IconPlus size={14} /> Add Custom Clause
                 </button>
               </div>
@@ -227,7 +227,7 @@ export default function NDA_freelancer() {
                       rows="2"
                       value={clause.description} 
                       onChange={(e) => handleClauseChange(index, 'description', e.target.value)}
-                      className="w-full p-3 border border-gray-200 rounded-xl text-xs font-medium bg-white text-gray-700 resize-none focus:outline-none focus:border-emerald-600"
+                      className="w-full p-3 border border-gray-200 rounded-xl text-xs font-medium bg-white text-gray-700 resize-none focus:outline-none focus:border-indigo-600"
                     />
                   </div>
                 ))}
@@ -239,7 +239,7 @@ export default function NDA_freelancer() {
           {toggles.signatures && (
             <div className="pt-8 border-t border-gray-100 grid grid-cols-1 sm:grid-cols-2 gap-12 text-xs">
               <div className="space-y-6">
-                <p className="font-bold text-gray-600">Meer Tech Solution Representative:</p>
+                <p className="font-bold text-gray-600">Agency Solutions Representative:</p>
                 <div className="border-b border-gray-400 pb-1 text-gray-400 italic">Authorized Signature & Date</div>
               </div>
               <div className="space-y-6">

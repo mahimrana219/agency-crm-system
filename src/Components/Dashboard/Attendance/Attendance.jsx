@@ -98,7 +98,7 @@ export default function Attendance() {
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-gray-100 pb-6">
         <div>
           <h1 className="text-2xl font-extrabold text-gray-900 tracking-tight flex items-center gap-2">
-            <IconCalendar className="text-emerald-600" size={28} /> August Sheet - Attendance Schedule
+            <IconCalendar className="text-indigo-600" size={28} /> August Sheet - Attendance Schedule
           </h1>
           <p className="text-sm text-gray-500 mt-1">Click the checkbox box daily to select attendance status.</p>
         </div>
@@ -108,7 +108,7 @@ export default function Attendance() {
             <button
               onClick={() => setActiveTab('sheet')}
               className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
-                activeTab === 'sheet' ? 'bg-white text-emerald-600 shadow-xs' : 'text-gray-600 hover:text-gray-900'
+                activeTab === 'sheet' ? 'bg-white text-indigo-600 shadow-xs' : 'text-gray-600 hover:text-gray-900'
               }`}
             >
               <IconTable size={16} /> Mark Sheet
@@ -117,7 +117,7 @@ export default function Attendance() {
             <button
               onClick={() => setActiveTab('results')}
               className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
-                activeTab === 'results' ? 'bg-white text-emerald-600 shadow-xs' : 'text-gray-600 hover:text-gray-900'
+                activeTab === 'results' ? 'bg-white text-indigo-600 shadow-xs' : 'text-gray-600 hover:text-gray-900'
               }`}
             >
               <IconEye size={16} /> See Results
@@ -126,14 +126,14 @@ export default function Attendance() {
 
           <button
             onClick={() => setIsModalOpen(true)}
-            className="flex items-center gap-2 px-4 py-2.5 bg-white border border-gray-200 hover:bg-emerald-50 text-gray-700 hover:text-emerald-600 rounded-xl text-xs font-bold shadow-xs transition-all cursor-pointer"
+            className="flex items-center gap-2 px-4 py-2.5 bg-white border border-gray-200 hover:bg-indigo-50 text-gray-700 hover:text-indigo-600 rounded-xl text-xs font-bold shadow-xs transition-all cursor-pointer"
           >
-            <IconUserPlus size={16} className="text-emerald-600" /> Add Member
+            <IconUserPlus size={16} className="text-indigo-600" /> Add Member
           </button>
 
           <button
             onClick={handleSave}
-            className="flex items-center gap-2 px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold shadow-md shadow-emerald-200 transition-all cursor-pointer"
+            className="flex items-center gap-2 px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-bold shadow-md shadow-indigo-200 transition-all cursor-pointer"
           >
             <IconDeviceFloppy size={16} /> Save Changes
           </button>
@@ -141,7 +141,7 @@ export default function Attendance() {
       </div>
 
       {saved && (
-        <div className="flex items-center gap-2 bg-emerald-50 border border-emerald-200 text-emerald-700 px-4 py-3 rounded-2xl text-sm font-semibold">
+        <div className="flex items-center gap-2 bg-indigo-50 border border-indigo-200 text-indigo-700 px-4 py-3 rounded-2xl text-sm font-semibold">
           <IconCheck size={18} /> Attendance data saved successfully!
         </div>
       )}
@@ -159,7 +159,7 @@ export default function Attendance() {
                 {teamMembers.map((m) => (
                   <th key={m.name} className="py-3 px-3 text-center min-w-[180px]">
                     <div className="font-bold text-white text-sm">{m.name}</div>
-                    <div className="text-[10px] text-emerald-400 font-normal tracking-normal capitalize mt-0.5">{m.role}</div>
+                    <div className="text-[10px] text-indigo-400 font-normal tracking-normal capitalize mt-0.5">{m.role}</div>
                   </th>
                 ))}
               </tr>
@@ -189,13 +189,13 @@ export default function Attendance() {
                               onClick={() => setActivePopup(isPopupOpen ? null : popupKey)}
                               className={`w-full py-1.5 px-3 rounded-xl text-xs font-bold border flex items-center justify-between gap-2 transition-all cursor-pointer ${
                                 status === 'Present'
-                                  ? 'bg-emerald-50 text-emerald-700 border-emerald-200 hover:bg-emerald-100'
+                                  ? 'bg-indigo-50 text-indigo-700 border-indigo-200 hover:bg-indigo-100'
                                   : status === 'Absent' || status === 'Sandwich'
                                   ? 'bg-rose-50 text-rose-700 border-rose-200 hover:bg-rose-100'
                                   : status === 'WFH'
                                   ? 'bg-blue-50 text-blue-700 border-blue-200 hover:bg-blue-100'
                                   : status === 'Temporary Leave' || status === 'Half Day'
-                                  ? 'bg-amber-50 text-amber-700 border-amber-200 hover:bg-amber-100'
+                                  ? 'bg-indigo-50 text-indigo-700 border-indigo-200 hover:bg-indigo-100'
                                   : 'bg-white text-gray-400 border-gray-200 hover:bg-gray-50'
                               }`}
                             >
@@ -204,7 +204,7 @@ export default function Attendance() {
                                   type="checkbox"
                                   checked={Boolean(status)}
                                   readOnly
-                                  className="w-4 h-4 accent-emerald-600 rounded-sm pointer-events-none"
+                                  className="w-4 h-4 accent-indigo-600 rounded-sm pointer-events-none"
                                 />
                                 <span>{status || 'Mark...'}</span>
                               </div>
@@ -219,7 +219,7 @@ export default function Attendance() {
                                     key={opt}
                                     onClick={() => handleStatusSelect(row.id, m.name, opt)}
                                     className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold transition-colors cursor-pointer ${
-                                      status === opt ? 'bg-emerald-50 text-emerald-700' : 'text-gray-700 hover:bg-gray-50'
+                                      status === opt ? 'bg-indigo-50 text-indigo-700' : 'text-gray-700 hover:bg-gray-50'
                                     }`}
                                   >
                                     {opt}
@@ -257,19 +257,19 @@ export default function Attendance() {
             return (
               <div key={m.name} className="bg-white border border-gray-100 rounded-3xl p-6 shadow-xs space-y-4">
                 <div className="flex items-center gap-3 pb-3 border-b border-gray-100">
-                  <div className="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center font-extrabold text-base">
+                  <div className="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-800 flex items-center justify-center font-extrabold text-base">
                     {m.name.charAt(0)}
                   </div>
                   <div>
                     <h3 className="text-base font-bold text-gray-900">{m.name}</h3>
-                    <p className="text-xs text-emerald-600 font-medium">{m.role}</p>
+                    <p className="text-xs text-indigo-600 font-medium">{m.role}</p>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-3 gap-2 text-center">
-                  <div className="bg-emerald-50 border border-emerald-100 p-2.5 rounded-2xl">
-                    <span className="text-[9px] uppercase font-bold text-emerald-600 block">Present</span>
-                    <span className="text-lg font-extrabold text-emerald-700">{presentCount}</span>
+                  <div className="bg-indigo-50 border border-indigo-100 p-2.5 rounded-2xl">
+                    <span className="text-[9px] uppercase font-bold text-indigo-600 block">Present</span>
+                    <span className="text-lg font-extrabold text-indigo-700">{presentCount}</span>
                   </div>
 
                   <div className="bg-rose-50 border border-rose-100 p-2.5 rounded-2xl">
@@ -310,7 +310,7 @@ export default function Attendance() {
                   placeholder="e.g. Ali Khan" 
                   value={newMemberName}
                   onChange={(e) => setNewMemberName(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-emerald-600 bg-gray-50/30"
+                  className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-indigo-600 bg-gray-50/30"
                   required 
                 />
               </div>
@@ -322,7 +322,7 @@ export default function Attendance() {
                   placeholder="e.g. Backend Developer" 
                   value={newMemberRole}
                   onChange={(e) => setNewMemberRole(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-emerald-600 bg-gray-50/30" 
+                  className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-indigo-600 bg-gray-50/30" 
                 />
               </div>
 
@@ -336,7 +336,7 @@ export default function Attendance() {
                 </button>
                 <button 
                   type="submit"
-                  className="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold shadow-md shadow-emerald-200 transition-all cursor-pointer"
+                  className="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-bold shadow-md shadow-indigo-200 transition-all cursor-pointer"
                 >
                   Add to Sheet
                 </button>

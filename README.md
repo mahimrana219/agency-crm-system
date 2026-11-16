@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🚀 MeerWork CRM
+# 🚀 Agency Solutions CRM
 
 ### The all-in-one operating system for agencies & freelancers
 
@@ -18,9 +18,9 @@ Leads, clients, projects, invoices, contracts, payroll, attendance and finance t
 
 ---
 
-## ✨ Why MeerWork?
+## ✨ Why Agency Solutions?
 
-Most agencies juggle 6–10 different tools: a CRM for leads, a spreadsheet for projects, a separate app for invoices, Google Docs for contracts, another for attendance. **MeerWork brings all of it into one workspace**, built around how a real agency actually works: from first lead → signed contract → delivered project → paid invoice.
+Most agencies juggle 6–10 different tools: a CRM for leads, a spreadsheet for projects, a separate app for invoices, Google Docs for contracts, another for attendance. **Agency Solutions brings all of it into one workspace**, built around how a real agency actually works: from first lead → signed contract → delivered project → paid invoice.
 
 ## 🧩 Modules
 

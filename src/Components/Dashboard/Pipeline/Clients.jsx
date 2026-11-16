@@ -43,7 +43,7 @@ export default function Clients() {
         {/* Add Client Button */}
         <button 
           onClick={() => setShowAddModal(true)}
-          className="flex items-center justify-center gap-1.5 px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl shadow-md shadow-emerald-200 transition-all cursor-pointer active:scale-95 w-full sm:w-auto"
+          className="flex items-center justify-center gap-1.5 px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-xl shadow-md shadow-indigo-200 transition-all cursor-pointer active:scale-95 w-full sm:w-auto"
         >
           <IconPlus size={16} /> Add Client
         </button>
@@ -72,12 +72,12 @@ export default function Clients() {
         </div>
 
         <div className="flex items-center gap-3.5 p-3.5 rounded-2xl bg-gray-50/70 border border-gray-100">
-          <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold text-sm">
-            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block"></span>
+          <div className="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold text-sm">
+            <span className="w-2.5 h-2.5 rounded-full bg-indigo-500 inline-block"></span>
           </div>
           <div>
             <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wider">Ongoing</p>
-            <p className="text-sm sm:text-base font-black text-emerald-600">0</p>
+            <p className="text-sm sm:text-base font-black text-indigo-600">0</p>
           </div>
         </div>
 
@@ -101,7 +101,7 @@ export default function Clients() {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search by name or phone..."
-            className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500 shadow-2xs"
+            className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500 shadow-2xs"
           />
         </div>
       </div>
@@ -116,7 +116,7 @@ export default function Clients() {
         
         <button 
           onClick={() => setShowAddModal(true)}
-          className="flex items-center gap-1.5 px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl shadow-md shadow-emerald-200 transition-all cursor-pointer active:scale-95"
+          className="flex items-center gap-1.5 px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-xl shadow-md shadow-indigo-200 transition-all cursor-pointer active:scale-95"
         >
           <IconPlus size={16} /> Add Client
         </button>
@@ -153,7 +153,7 @@ export default function Clients() {
                     placeholder="e.g. John Smith"
                     value={clientData.name}
                     onChange={(e) => setClientData({...clientData, name: e.target.value})}
-                    className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500"
+                    className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500"
                   />
                 </div>
               </div>
@@ -168,7 +168,7 @@ export default function Clients() {
                       placeholder="e.g. Acme Corp"
                       value={clientData.company}
                       onChange={(e) => setClientData({...clientData, company: e.target.value})}
-                      className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500"
+                      className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500"
                     />
                   </div>
                 </div>
@@ -182,7 +182,7 @@ export default function Clients() {
                       placeholder="+1 (555) 000-0000"
                       value={clientData.phone}
                       onChange={(e) => setClientData({...clientData, phone: e.target.value})}
-                      className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500"
+                      className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500"
                     />
                   </div>
                 </div>
@@ -197,7 +197,7 @@ export default function Clients() {
                     placeholder="john@example.com"
                     value={clientData.email}
                     onChange={(e) => setClientData({...clientData, email: e.target.value})}
-                    className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500"
+                    className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500"
                   />
                 </div>
               </div>
@@ -211,7 +211,7 @@ export default function Clients() {
                     placeholder="Street, City, Country"
                     value={clientData.address}
                     onChange={(e) => setClientData({...clientData, address: e.target.value})}
-                    className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500"
+                    className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500"
                   />
                 </div>
               </div>
@@ -223,7 +223,7 @@ export default function Clients() {
                   placeholder="Additional information about the client..."
                   value={clientData.notes}
                   onChange={(e) => setClientData({...clientData, notes: e.target.value})}
-                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500 resize-none"
+                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500 resize-none"
                 />
               </div>
 
@@ -238,7 +238,7 @@ export default function Clients() {
                 </button>
                 <button 
                   type="submit"
-                  className="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl shadow-sm shadow-emerald-200 transition-colors cursor-pointer"
+                  className="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-xl shadow-sm shadow-indigo-200 transition-colors cursor-pointer"
                 >
                   Save Client
                 </button>

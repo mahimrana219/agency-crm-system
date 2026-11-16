@@ -39,14 +39,14 @@ export default function Retainers() {
       <div className="space-y-3">
         <Link 
           to="/projects" 
-          className="inline-flex items-center gap-1.5 text-xs font-bold text-gray-500 hover:text-emerald-600 transition-colors"
+          className="inline-flex items-center gap-1.5 text-xs font-bold text-gray-500 hover:text-indigo-600 transition-colors"
         >
           <IconArrowLeft size={15} /> Back to Projects
         </Link>
 
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 bg-white p-6 rounded-3xl border border-gray-100 shadow-xs">
           <div className="flex items-center gap-3.5">
-            <div className="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center border border-amber-100 shadow-2xs">
+            <div className="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center border border-indigo-100 shadow-2xs">
               <IconRepeat size={24} />
             </div>
             <div>
@@ -62,7 +62,7 @@ export default function Retainers() {
           {/* New Retainer Button */}
           <button 
             onClick={() => setShowNewModal(true)}
-            className="flex items-center justify-center gap-1.5 px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl shadow-md shadow-emerald-200 transition-all cursor-pointer active:scale-95 w-full sm:w-auto"
+            className="flex items-center justify-center gap-1.5 px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-xl shadow-md shadow-indigo-200 transition-all cursor-pointer active:scale-95 w-full sm:w-auto"
           >
             <IconPlus size={16} /> New Retainer
           </button>
@@ -72,8 +72,8 @@ export default function Retainers() {
       {/* -- Top Summary Cards (Active, MRR, Total) -- */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div className="flex items-center gap-3.5 p-5 bg-white rounded-3xl border border-gray-100 shadow-xs">
-          <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold text-sm">
-            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block"></span>
+          <div className="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold text-sm">
+            <span className="w-2.5 h-2.5 rounded-full bg-indigo-500 inline-block"></span>
           </div>
           <div>
             <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wider">Active</p>
@@ -82,12 +82,12 @@ export default function Retainers() {
         </div>
 
         <div className="flex items-center gap-3.5 p-5 bg-white rounded-3xl border border-gray-100 shadow-xs">
-          <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold text-sm">
+          <div className="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold text-sm">
             $
           </div>
           <div>
             <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wider">MRR</p>
-            <p className="text-lg font-black text-emerald-600">$0</p>
+            <p className="text-lg font-black text-indigo-600">$0</p>
           </div>
         </div>
 
@@ -104,7 +104,7 @@ export default function Retainers() {
 
       {/* -- Empty State Box -- */}
       <div className="bg-white rounded-3xl border border-gray-100 p-20 text-center flex flex-col items-center justify-center shadow-xs">
-        <div className="w-14 h-14 rounded-2xl bg-amber-50 flex items-center justify-center text-amber-600 mb-4 border border-amber-100 shadow-2xs">
+        <div className="w-14 h-14 rounded-2xl bg-indigo-50 flex items-center justify-center text-indigo-600 mb-4 border border-indigo-100 shadow-2xs">
           <IconRepeat size={26} />
         </div>
         <h3 className="text-base font-black text-gray-900 mb-1">No retainers yet</h3>
@@ -112,7 +112,7 @@ export default function Retainers() {
         
         <button 
           onClick={() => setShowNewModal(true)}
-          className="flex items-center gap-1.5 px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl shadow-md shadow-emerald-200 transition-all cursor-pointer active:scale-95"
+          className="flex items-center gap-1.5 px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-xl shadow-md shadow-indigo-200 transition-all cursor-pointer active:scale-95"
         >
           <IconPlus size={16} /> New Retainer
         </button>
@@ -149,7 +149,7 @@ export default function Retainers() {
                     placeholder="e.g. Acme Corporation"
                     value={retainerData.clientName}
                     onChange={(e) => setRetainerData({...retainerData, clientName: e.target.value})}
-                    className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500"
+                    className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500"
                   />
                 </div>
               </div>
@@ -164,7 +164,7 @@ export default function Retainers() {
                     placeholder="e.g. Ongoing SEO & Maintenance"
                     value={retainerData.projectName}
                     onChange={(e) => setRetainerData({...retainerData, projectName: e.target.value})}
-                    className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500"
+                    className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500"
                   />
                 </div>
               </div>
@@ -180,7 +180,7 @@ export default function Retainers() {
                       placeholder="500"
                       value={retainerData.monthlyFee}
                       onChange={(e) => setRetainerData({...retainerData, monthlyFee: e.target.value})}
-                      className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500"
+                      className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500"
                     />
                   </div>
                 </div>
@@ -193,7 +193,7 @@ export default function Retainers() {
                       required
                       value={retainerData.startDate}
                       onChange={(e) => setRetainerData({...retainerData, startDate: e.target.value})}
-                      className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 focus:outline-none focus:border-emerald-500"
+                      className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 focus:outline-none focus:border-indigo-500"
                     />
                   </div>
                 </div>
@@ -206,7 +206,7 @@ export default function Retainers() {
                   placeholder="Details about monthly deliverables..."
                   value={retainerData.notes}
                   onChange={(e) => setRetainerData({...retainerData, notes: e.target.value})}
-                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500 resize-none"
+                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500 resize-none"
                 />
               </div>
 
@@ -221,7 +221,7 @@ export default function Retainers() {
                 </button>
                 <button 
                   type="submit"
-                  className="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl shadow-sm shadow-emerald-200 transition-colors cursor-pointer"
+                  className="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-xl shadow-sm shadow-indigo-200 transition-colors cursor-pointer"
                 >
                   Create Retainer
                 </button>

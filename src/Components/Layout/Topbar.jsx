@@ -16,7 +16,7 @@ export default function Topbar({ setIsMobileOpen }) {
         </button>
 
         {/* Search Bar */}
-        <div className="flex items-center gap-3 bg-[#F9FAFB] border border-[#E5E7EB] px-3.5 py-2 rounded-xl w-full sm:w-72 text-sm text-[#6B7280] focus-within:border-[#16A34A] transition-colors">
+        <div className="flex items-center gap-3 bg-[#F9FAFB] border border-[#E5E7EB] px-3.5 py-2 rounded-xl w-full sm:w-72 text-sm text-[#6B7280] focus-within:border-[#4F46E5] transition-colors">
           <IconSearch size={18} className="shrink-0" />
           <input
             type="text"
@@ -31,12 +31,12 @@ export default function Topbar({ setIsMobileOpen }) {
         {/* Notification Bell */}
         <button className="p-2 bg-[#F9FAFB] border border-[#E5E7EB] text-[#4B5563] hover:text-[#111827] rounded-xl relative transition-colors cursor-pointer">
           <IconBell size={20} />
-          <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-[#16A34A] rounded-full"></span>
+          <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-[#4F46E5] rounded-full"></span>
         </button>
 
         {/* User Profile Info */}
         <div className="flex items-center gap-3 pl-2 border-l border-[#E5E7EB]">
-          <div className="w-9 h-9 rounded-full bg-[#F0FDF4] border border-[#DCFCE7] flex items-center justify-center text-[#16A34A] font-bold text-sm shrink-0">
+          <div className="w-9 h-9 rounded-full bg-[#EEF2FF] border border-[#E0E7FF] flex items-center justify-center text-[#4F46E5] font-bold text-sm shrink-0">
             MR
           </div>
           <div className="hidden sm:block text-left">

@@ -17,7 +17,7 @@ export default function Profile() {
     bio: 'Specialized in building full-stack web applications with React, Next.js, Node.js, and MongoDB.',
     
     // Company / Agency Details
-    agencyName: 'Meer Tech Solutions',
+    agencyName: 'Agency Solutions',
     agencyWebsite: 'https://meertech.dev',
     taxId: 'PK-987654321',
     address: 'Karachi, Sindh, Pakistan',
@@ -43,7 +43,7 @@ export default function Profile() {
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-gray-100 pb-6">
         <div>
           <h1 className="text-2xl font-extrabold text-gray-900 tracking-tight flex items-center gap-2">
-            <IconUser className="text-emerald-600" size={28} /> Profile Management
+            <IconUser className="text-indigo-600" size={28} /> Profile Management
           </h1>
           <p className="text-sm text-gray-500 mt-1">Switch between your personal freelancer profile and agency company setup.</p>
         </div>
@@ -54,7 +54,7 @@ export default function Profile() {
             onClick={() => setActiveTab('freelancer')}
             className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
               activeTab === 'freelancer'
-                ? 'bg-white text-emerald-600 shadow-xs'
+                ? 'bg-white text-indigo-600 shadow-xs'
                 : 'text-gray-600 hover:text-gray-900'
             }`}
           >
@@ -65,7 +65,7 @@ export default function Profile() {
             onClick={() => setActiveTab('agency')}
             className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
               activeTab === 'agency'
-                ? 'bg-white text-emerald-600 shadow-xs'
+                ? 'bg-white text-indigo-600 shadow-xs'
                 : 'text-gray-600 hover:text-gray-900'
             }`}
           >
@@ -75,7 +75,7 @@ export default function Profile() {
       </div>
 
       {saved && (
-        <div className="flex items-center gap-2 bg-emerald-50 border border-emerald-200 text-emerald-700 px-4 py-2.5 rounded-xl text-sm font-semibold animate-fade-in">
+        <div className="flex items-center gap-2 bg-indigo-50 border border-indigo-200 text-indigo-700 px-4 py-2.5 rounded-xl text-sm font-semibold animate-fade-in">
           <IconCheck size={18} /> Details updated successfully!
         </div>
       )}
@@ -86,13 +86,13 @@ export default function Profile() {
         {activeTab === 'freelancer' && (
           <div className="bg-white border border-gray-100 rounded-3xl p-6 md:p-8 shadow-xs space-y-6 animate-fade-in">
             <div className="flex items-center gap-2 pb-4 border-b border-gray-100">
-              <IconUser className="text-emerald-600" size={22} />
+              <IconUser className="text-indigo-600" size={22} />
               <h3 className="text-lg font-bold text-gray-900">General / Freelancer Profile Setup</h3>
             </div>
 
             {/* Avatar Upload */}
             <div className="flex items-center gap-6 py-2">
-              <div className="w-20 h-20 rounded-2xl bg-gradient-to-tr from-emerald-600 to-emerald-400 text-white flex items-center justify-center font-extrabold text-2xl shadow-md">
+              <div className="w-20 h-20 rounded-2xl bg-gradient-to-tr from-indigo-600 to-indigo-400 text-white flex items-center justify-center font-extrabold text-2xl shadow-md">
                 M
               </div>
               <div>
@@ -111,7 +111,7 @@ export default function Profile() {
                   name="fullName" 
                   value={profileData.fullName} 
                   onChange={handleChange}
-                  className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-emerald-600 bg-gray-50/30" 
+                  className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-indigo-600 bg-gray-50/30" 
                 />
               </div>
 
@@ -122,7 +122,7 @@ export default function Profile() {
                   name="email" 
                   value={profileData.email} 
                   onChange={handleChange}
-                  className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-emerald-600 bg-gray-50/30" 
+                  className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-indigo-600 bg-gray-50/30" 
                 />
               </div>
 
@@ -133,7 +133,7 @@ export default function Profile() {
                   name="phone" 
                   value={profileData.phone} 
                   onChange={handleChange}
-                  className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-emerald-600 bg-gray-50/30" 
+                  className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-indigo-600 bg-gray-50/30" 
                 />
               </div>
 
@@ -144,7 +144,7 @@ export default function Profile() {
                   name="role" 
                   value={profileData.role} 
                   onChange={handleChange}
-                  className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-emerald-600 bg-gray-50/30" 
+                  className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-indigo-600 bg-gray-50/30" 
                 />
               </div>
 
@@ -155,7 +155,7 @@ export default function Profile() {
                   rows="3"
                   value={profileData.bio} 
                   onChange={handleChange}
-                  className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-emerald-600 bg-gray-50/30 resize-none" 
+                  className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-indigo-600 bg-gray-50/30 resize-none" 
                 />
               </div>
             </div>
@@ -166,7 +166,7 @@ export default function Profile() {
         {activeTab === 'agency' && (
           <div className="bg-white border border-gray-100 rounded-3xl p-6 md:p-8 shadow-xs space-y-6 animate-fade-in">
             <div className="flex items-center gap-2 pb-4 border-b border-gray-100">
-              <IconBuilding className="text-emerald-600" size={22} />
+              <IconBuilding className="text-indigo-600" size={22} />
               <h3 className="text-lg font-bold text-gray-900">Agency Profile Setup</h3>
             </div>
 
@@ -178,7 +178,7 @@ export default function Profile() {
                   name="agencyName" 
                   value={profileData.agencyName} 
                   onChange={handleChange}
-                  className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-emerald-600 bg-gray-50/30" 
+                  className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-indigo-600 bg-gray-50/30" 
                 />
               </div>
 
@@ -189,7 +189,7 @@ export default function Profile() {
                   name="agencyEmail" 
                   value={profileData.agencyEmail} 
                   onChange={handleChange}
-                  className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-emerald-600 bg-gray-50/30" 
+                  className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-indigo-600 bg-gray-50/30" 
                 />
               </div>
 
@@ -200,7 +200,7 @@ export default function Profile() {
                   name="agencyWebsite" 
                   value={profileData.agencyWebsite} 
                   onChange={handleChange}
-                  className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-emerald-600 bg-gray-50/30" 
+                  className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-indigo-600 bg-gray-50/30" 
                 />
               </div>
 
@@ -211,7 +211,7 @@ export default function Profile() {
                   name="taxId" 
                   value={profileData.taxId} 
                   onChange={handleChange}
-                  className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-emerald-600 bg-gray-50/30" 
+                  className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-indigo-600 bg-gray-50/30" 
                 />
               </div>
 
@@ -222,7 +222,7 @@ export default function Profile() {
                   name="address" 
                   value={profileData.address} 
                   onChange={handleChange}
-                  className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-emerald-600 bg-gray-50/30" 
+                  className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-indigo-600 bg-gray-50/30" 
                 />
               </div>
             </div>
@@ -233,7 +233,7 @@ export default function Profile() {
         <div className="flex justify-end pt-2">
           <button 
             type="submit" 
-            className="flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-sm font-bold shadow-md shadow-emerald-200 transition-all cursor-pointer"
+            className="flex items-center gap-2 px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-sm font-bold shadow-md shadow-indigo-200 transition-all cursor-pointer"
           >
             <IconDeviceFloppy size={18} /> Save Details
           </button>

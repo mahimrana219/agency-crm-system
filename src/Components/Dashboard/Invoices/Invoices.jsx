@@ -32,7 +32,7 @@ export default function Invoices() {
           <h1 className="text-2xl font-black text-gray-900">Invoices Dashboard</h1>
           <p className="text-xs text-gray-500 mt-1">Manage and track all agency billings and client invoices.</p>
         </div>
-        <NavLink to="/invoicecreate" className="bg-emerald-600 text-white px-5 py-2.5 rounded-xl font-semibold text-sm hover:bg-emerald-700 flex items-center gap-2 shadow-sm transition-all">
+        <NavLink to="/invoicecreate" className="bg-indigo-600 text-white px-5 py-2.5 rounded-xl font-semibold text-sm hover:bg-indigo-700 flex items-center gap-2 shadow-sm transition-all">
           <IconPlus size={18} /> Create Invoice
         </NavLink>
       </div>
@@ -42,16 +42,16 @@ export default function Invoices() {
         <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-xs flex items-center justify-between">
           <div>
             <p className="text-xs font-bold text-gray-400 uppercase">Total Paid</p>
-            <h3 className="text-2xl font-black mt-1 text-emerald-600">$4,200</h3>
+            <h3 className="text-2xl font-black mt-1 text-indigo-600">$4,200</h3>
           </div>
-          <div className="p-3 bg-emerald-50 text-emerald-600 rounded-xl"><IconCheck size={22}/></div>
+          <div className="p-3 bg-indigo-50 text-indigo-600 rounded-xl"><IconCheck size={22}/></div>
         </div>
         <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-xs flex items-center justify-between">
           <div>
             <p className="text-xs font-bold text-gray-400 uppercase">Pending</p>
-            <h3 className="text-2xl font-black mt-1 text-amber-600">$2,200</h3>
+            <h3 className="text-2xl font-black mt-1 text-indigo-600">$2,200</h3>
           </div>
-          <div className="p-3 bg-amber-50 text-amber-600 rounded-xl"><IconClock size={22}/></div>
+          <div className="p-3 bg-indigo-50 text-indigo-600 rounded-xl"><IconClock size={22}/></div>
         </div>
         <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-xs flex items-center justify-between">
           <div>
@@ -82,12 +82,12 @@ export default function Invoices() {
               
               {/* Card Top: ID & Status */}
               <div className="flex justify-between items-center">
-                <span className="text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-lg flex items-center gap-1">
+                <span className="text-xs font-bold text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-lg flex items-center gap-1">
                   <IconFileInvoice size={14} /> {inv.id}
                 </span>
                 <span className={`px-2.5 py-1 rounded-lg text-xs font-bold ${
-                  inv.status === 'Paid' ? 'bg-emerald-50 text-emerald-600' : 
-                  inv.status === 'Pending' ? 'bg-amber-50 text-amber-600' : 'bg-rose-50 text-rose-600'
+                  inv.status === 'Paid' ? 'bg-indigo-50 text-indigo-600' : 
+                  inv.status === 'Pending' ? 'bg-indigo-50 text-indigo-600' : 'bg-rose-50 text-rose-600'
                 }`}>
                   {inv.status}
                 </span>
@@ -110,7 +110,7 @@ export default function Invoices() {
               </div>
 
               {/* Action Button */}
-              <button className="w-full mt-2 bg-gray-50 hover:bg-emerald-50 text-gray-600 hover:text-emerald-600 py-2.5 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 transition-colors cursor-pointer">
+              <button className="w-full mt-2 bg-gray-50 hover:bg-indigo-50 text-gray-600 hover:text-indigo-600 py-2.5 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 transition-colors cursor-pointer">
                 <IconDownload size={16} /> Download PDF
               </button>
 

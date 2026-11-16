@@ -143,7 +143,7 @@ export default function Meetings() {
               setMeetingData({ title: '', client: '', date: '', time: '', meetLink: '' });
               setShowScheduleModal(true);
             }}
-            className="flex items-center gap-1.5 px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl shadow-md shadow-emerald-200 transition-all cursor-pointer active:scale-95"
+            className="flex items-center gap-1.5 px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-xl shadow-md shadow-indigo-200 transition-all cursor-pointer active:scale-95"
           >
             <IconPlus size={16} /> Schedule
           </button>
@@ -151,9 +151,9 @@ export default function Meetings() {
       </div>
 
       {/* -- Pro Feature Banner -- */}
-      <div className="bg-emerald-50/50 border border-emerald-200/60 p-4 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div className="bg-indigo-50/50 border border-indigo-200/60 p-4 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div className="flex items-start gap-3">
-          <div className="p-2 bg-emerald-100 text-emerald-700 rounded-xl mt-0.5">
+          <div className="p-2 bg-indigo-100 text-indigo-700 rounded-xl mt-0.5">
             <IconVideo size={18} />
           </div>
           <div>
@@ -198,9 +198,9 @@ export default function Meetings() {
                 <div key={item.id} className="p-4 bg-gray-50 rounded-2xl border border-gray-100 flex flex-col md:flex-row md:items-center justify-between gap-4">
                   <div className="space-y-1.5">
                     <div className="flex items-center gap-2">
-                      <span className="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2.5 py-0.5 rounded-md">{item.client}</span>
+                      <span className="text-[10px] font-bold text-indigo-600 bg-indigo-50 px-2.5 py-0.5 rounded-md">{item.client}</span>
                       <span className={`text-[10px] font-bold px-2 py-0.5 rounded-md ${
-                        item.status === 'Scheduled' ? 'bg-emerald-50 text-emerald-700 border border-emerald-200' : 'bg-emerald-100/70 text-emerald-900 border border-emerald-300'
+                        item.status === 'Scheduled' ? 'bg-indigo-50 text-indigo-700 border border-indigo-200' : 'bg-indigo-100/70 text-indigo-900 border border-indigo-300'
                       }`}>
                         {item.status}
                       </span>
@@ -208,7 +208,7 @@ export default function Meetings() {
                     <h4 className="text-sm font-black text-gray-900">{item.title}</h4>
                     <p className="text-xs text-gray-500 flex items-center gap-1"><IconClock size={13} /> {item.time} ({item.date})</p>
                     {item.comment && (
-                      <p className="text-xs text-emerald-900 bg-emerald-50/80 p-2 rounded-xl border border-emerald-200/50 mt-1">
+                      <p className="text-xs text-indigo-900 bg-indigo-50/80 p-2 rounded-xl border border-indigo-200/50 mt-1">
                         <strong>Reason / Comment:</strong> {item.comment}
                       </p>
                     )}
@@ -222,7 +222,7 @@ export default function Meetings() {
                         setRescheduleData({ newTime: item.time, comment: item.comment || '' });
                         setShowRescheduleModal(true);
                       }}
-                      className="px-3 py-1.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 text-xs font-bold rounded-xl border border-emerald-200 transition-all cursor-pointer flex items-center gap-1"
+                      className="px-3 py-1.5 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 text-xs font-bold rounded-xl border border-indigo-200 transition-all cursor-pointer flex items-center gap-1"
                       title="Postpone or mark unavailable with comment"
                     >
                       <IconAlertCircle size={14} /> Postpone
@@ -257,7 +257,7 @@ export default function Meetings() {
           <div className="grid grid-cols-8 border-b border-gray-100 bg-gray-50/70 text-center">
             <div className="py-3 text-[11px] font-bold text-gray-400 border-r border-gray-100">TIME</div>
             {['SUN 26', 'MON 27', 'TUE 28', 'WED 29', 'THU 30', 'FRI 31', 'SAT 1'].map((day, idx) => (
-              <div key={idx} className={`py-3 text-xs font-black ${day.includes('29') ? 'text-emerald-600 bg-emerald-50/50' : 'text-gray-700'} border-r border-gray-100 last:border-r-0`}>
+              <div key={idx} className={`py-3 text-xs font-black ${day.includes('29') ? 'text-indigo-600 bg-indigo-50/50' : 'text-gray-700'} border-r border-gray-100 last:border-r-0`}>
                 {day}
               </div>
             ))}
@@ -270,7 +270,7 @@ export default function Meetings() {
                   {time}
                 </div>
                 {[...Array(7)].map((_, cIdx) => (
-                  <div key={cIdx} className="border-r border-gray-100 last:border-r-0 hover:bg-emerald-50/20 transition-colors cursor-pointer p-2"></div>
+                  <div key={cIdx} className="border-r border-gray-100 last:border-r-0 hover:bg-indigo-50/20 transition-colors cursor-pointer p-2"></div>
                 ))}
               </div>
             ))}
@@ -291,12 +291,12 @@ export default function Meetings() {
               <div 
                 key={day} 
                 className={`min-h-90px p-2.5 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between ${
-                  day === 30 ? 'bg-emerald-50 border-emerald-200 text-emerald-900 font-black' : 'bg-gray-50/40 border-gray-100 hover:border-emerald-200 text-gray-700'
+                  day === 30 ? 'bg-indigo-50 border-indigo-200 text-indigo-900 font-black' : 'bg-gray-50/40 border-gray-100 hover:border-indigo-200 text-gray-700'
                 }`}
               >
                 <span className="text-xs font-bold">{day}</span>
                 {day === 30 && (
-                  <span className="text-[10px] bg-emerald-600 text-white px-1.5 py-0.5 rounded-md truncate">1 Meeting</span>
+                  <span className="text-[10px] bg-indigo-600 text-white px-1.5 py-0.5 rounded-md truncate">1 Meeting</span>
                 )}
               </div>
             ))}
@@ -333,7 +333,7 @@ export default function Meetings() {
                   placeholder="e.g. Discovery Call / Project Sync"
                   value={meetingData.title}
                   onChange={(e) => setMeetingData({...meetingData, title: e.target.value})}
-                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500"
+                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500"
                 />
               </div>
 
@@ -347,7 +347,7 @@ export default function Meetings() {
                     placeholder="e.g. Zahid Dental Clinic"
                     value={meetingData.client}
                     onChange={(e) => setMeetingData({...meetingData, client: e.target.value})}
-                    className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500"
+                    className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500"
                   />
                 </div>
               </div>
@@ -363,7 +363,7 @@ export default function Meetings() {
                       placeholder="e.g. Jul 30, 2026"
                       value={meetingData.date}
                       onChange={(e) => setMeetingData({...meetingData, date: e.target.value})}
-                      className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 focus:outline-none focus:border-emerald-500"
+                      className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 focus:outline-none focus:border-indigo-500"
                     />
                   </div>
                 </div>
@@ -377,7 +377,7 @@ export default function Meetings() {
                       placeholder="e.g. 10:00 AM - 10:30 AM"
                       value={meetingData.time}
                       onChange={(e) => setMeetingData({...meetingData, time: e.target.value})}
-                      className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500"
+                      className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500"
                     />
                   </div>
                 </div>
@@ -392,7 +392,7 @@ export default function Meetings() {
                     placeholder="https://meet.google.com/abc-xyz"
                     value={meetingData.meetLink}
                     onChange={(e) => setMeetingData({...meetingData, meetLink: e.target.value})}
-                    className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500"
+                    className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500"
                   />
                 </div>
               </div>
@@ -407,7 +407,7 @@ export default function Meetings() {
                 </button>
                 <button 
                   type="submit"
-                  className="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl shadow-md shadow-emerald-200 transition-colors cursor-pointer"
+                  className="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-xl shadow-md shadow-indigo-200 transition-colors cursor-pointer"
                 >
                   {editingId ? 'Update Meeting' : 'Schedule Meeting'}
                 </button>
@@ -445,7 +445,7 @@ export default function Meetings() {
                     placeholder="e.g. Tomorrow at 3:00 PM"
                     value={rescheduleData.newTime}
                     onChange={(e) => setRescheduleData({...rescheduleData, newTime: e.target.value})}
-                    className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500"
+                    className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500"
                   />
                 </div>
               </div>
@@ -458,7 +458,7 @@ export default function Meetings() {
                   placeholder="e.g. Busy with client project delivery, need to postpone this meeting."
                   value={rescheduleData.comment}
                   onChange={(e) => setRescheduleData({...rescheduleData, comment: e.target.value})}
-                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500"
+                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500"
                 ></textarea>
               </div>
 
@@ -472,7 +472,7 @@ export default function Meetings() {
                 </button>
                 <button 
                   type="submit"
-                  className="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl shadow-md shadow-emerald-200 transition-colors cursor-pointer"
+                  className="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-xl shadow-md shadow-indigo-200 transition-colors cursor-pointer"
                 >
                   Save Comment & Postpone
                 </button>

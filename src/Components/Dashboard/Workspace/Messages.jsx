@@ -113,7 +113,7 @@ export default function Messages() {
         </div>
         <button
           onClick={() => setShowNewChatModal(true)}
-          className="flex items-center gap-1.5 px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl shadow-md shadow-emerald-200 transition-all cursor-pointer active:scale-95"
+          className="flex items-center gap-1.5 px-4 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-xl shadow-md shadow-indigo-200 transition-all cursor-pointer active:scale-95"
         >
           <IconPlus size={16} /> New Chat
         </button>
@@ -134,7 +134,7 @@ export default function Messages() {
                 placeholder="Search conversations..." 
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-xs text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500"
+                className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-xs text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500"
               />
             </div>
           </div>
@@ -150,15 +150,15 @@ export default function Messages() {
                     setChats(chats.map(c => c.id === chat.id ? {...c, unread: 0} : c));
                   }}
                   className={`p-3.5 flex items-start gap-3 cursor-pointer transition-all ${
-                    activeChatId === chat.id ? 'bg-emerald-50/80 border-l-4 border-emerald-600 shadow-2xs' : 'hover:bg-gray-100/60 bg-white'
+                    activeChatId === chat.id ? 'bg-indigo-50/80 border-l-4 border-indigo-600 shadow-2xs' : 'hover:bg-gray-100/60 bg-white'
                   }`}
                 >
                   <div className="relative">
-                    <div className="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-800 font-black text-xs flex items-center justify-center shrink-0 border border-emerald-200">
+                    <div className="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-800 font-black text-xs flex items-center justify-center shrink-0 border border-indigo-200">
                       {chat.avatar}
                     </div>
                     {chat.online && (
-                      <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-500 border-2 border-white rounded-full"></span>
+                      <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-indigo-500 border-2 border-white rounded-full"></span>
                     )}
                   </div>
 
@@ -167,12 +167,12 @@ export default function Messages() {
                       <h4 className="text-xs font-black text-gray-900 truncate">{chat.name}</h4>
                       <span className="text-[10px] text-gray-400 font-medium">{chat.time}</span>
                     </div>
-                    <p className="text-[11px] text-emerald-700 font-medium truncate">{chat.company}</p>
+                    <p className="text-[11px] text-indigo-700 font-medium truncate">{chat.company}</p>
                     <p className="text-xs text-gray-500 truncate mt-0.5">{chat.lastMessage}</p>
                   </div>
 
                   {chat.unread > 0 && (
-                    <span className="w-5 h-5 bg-emerald-600 text-white font-black text-[10px] rounded-full flex items-center justify-center shrink-0 shadow-xs">
+                    <span className="w-5 h-5 bg-indigo-600 text-white font-black text-[10px] rounded-full flex items-center justify-center shrink-0 shadow-xs">
                       {chat.unread}
                     </span>
                   )}
@@ -198,12 +198,12 @@ export default function Messages() {
                 <IconArrowLeft size={18} />
               </button>
 
-              <div className="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-800 font-black text-xs flex items-center justify-center border border-emerald-200">
+              <div className="w-9 h-9 rounded-xl bg-indigo-100 text-indigo-800 font-black text-xs flex items-center justify-center border border-indigo-200">
                 {activeChat.avatar}
               </div>
               <div>
                 <h3 className="text-xs font-black text-gray-900">{activeChat.name}</h3>
-                <p className="text-[10px] text-emerald-600 font-bold">{activeChat.company} • {activeChat.online ? 'Online' : 'Offline'}</p>
+                <p className="text-[10px] text-indigo-600 font-bold">{activeChat.company} • {activeChat.online ? 'Online' : 'Offline'}</p>
               </div>
             </div>
 
@@ -229,14 +229,14 @@ export default function Messages() {
                   <div key={msg.id} className={`flex flex-col ${isMe ? 'items-end' : 'items-start'}`}>
                     <div className={`max-w-[80%] p-3 rounded-xl text-xs leading-relaxed shadow-2xs ${
                       isMe 
-                        ? 'bg-emerald-600 text-white rounded-tr-none' 
+                        ? 'bg-indigo-600 text-white rounded-tr-none' 
                         : 'bg-white text-gray-800 border border-gray-100 rounded-tl-none'
                     }`}>
                       {msg.text}
                     </div>
                     <div className="flex items-center gap-1 mt-1 text-[10px] text-gray-400 font-medium px-1">
                       <span>{msg.time}</span>
-                      {isMe && <IconChecks size={14} className="text-emerald-600" />}
+                      {isMe && <IconChecks size={14} className="text-indigo-600" />}
                     </div>
                   </div>
                 );
@@ -244,14 +244,14 @@ export default function Messages() {
             ) : (
               <div className="h-full flex flex-col items-center justify-center text-center text-gray-400 text-xs py-20">
                 <p>No messages yet with {activeChat.name}.</p>
-                <p className="text-[11px] text-emerald-600 mt-1">Send a message below to start chatting!</p>
+                <p className="text-[11px] text-indigo-600 mt-1">Send a message below to start chatting!</p>
               </div>
             )}
           </div>
 
           {/* Message Input Box */}
           <form onSubmit={handleSendMessage} className="p-3 border-t border-gray-100 bg-white flex items-center gap-2 shrink-0">
-            <button type="button" className="p-2 text-gray-400 hover:text-emerald-600 hover:bg-emerald-50 rounded-xl transition-all cursor-pointer">
+            <button type="button" className="p-2 text-gray-400 hover:text-indigo-600 hover:bg-indigo-50 rounded-xl transition-all cursor-pointer">
               <IconPaperclip size={18} />
             </button>
             <input 
@@ -259,14 +259,14 @@ export default function Messages() {
               placeholder="Type your message..."
               value={newMessage}
               onChange={(e) => setNewMessage(e.target.value)}
-              className="flex-1 px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500 focus:bg-white transition-all"
+              className="flex-1 px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500 focus:bg-white transition-all"
             />
-            <button type="button" className="p-2 text-gray-400 hover:text-emerald-600 hover:bg-emerald-50 rounded-xl transition-all cursor-pointer">
+            <button type="button" className="p-2 text-gray-400 hover:text-indigo-600 hover:bg-indigo-50 rounded-xl transition-all cursor-pointer">
               <IconMoodSmile size={18} />
             </button>
             <button 
               type="submit"
-              className="p-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl shadow-md shadow-emerald-200 transition-all cursor-pointer active:scale-95"
+              className="p-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl shadow-md shadow-indigo-200 transition-all cursor-pointer active:scale-95"
             >
               <IconSend size={16} />
             </button>
@@ -278,26 +278,26 @@ export default function Messages() {
         <div className="hidden lg:flex lg:col-span-3 flex-col bg-gray-50/50 p-4 space-y-4 overflow-y-auto">
           
           <div className="text-center pb-3 border-b border-gray-200/60">
-            <div className="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-800 font-black text-sm flex items-center justify-center mx-auto border-2 border-emerald-200 shadow-sm mb-2">
+            <div className="w-14 h-14 rounded-2xl bg-indigo-100 text-indigo-800 font-black text-sm flex items-center justify-center mx-auto border-2 border-indigo-200 shadow-sm mb-2">
               {activeChat.avatar}
             </div>
             <h3 className="text-xs font-black text-gray-900">{activeChat.name}</h3>
-            <p className="text-[11px] text-emerald-700 font-bold mt-0.5">{activeChat.company}</p>
+            <p className="text-[11px] text-indigo-700 font-bold mt-0.5">{activeChat.company}</p>
           </div>
 
           <div className="space-y-2">
             <h4 className="text-[10px] font-extrabold text-gray-400 uppercase tracking-wider">Contact Details</h4>
             <div className="p-3 bg-white rounded-xl border border-gray-200/70 space-y-2">
               <div className="flex items-center gap-2 text-xs text-gray-700">
-                <IconPhone size={13} className="text-emerald-600 shrink-0" />
+                <IconPhone size={13} className="text-indigo-600 shrink-0" />
                 <span className="font-medium">{activeChat.phone}</span>
               </div>
               <div className="flex items-center gap-2 text-xs text-gray-700 truncate">
-                <IconUser size={13} className="text-emerald-600 shrink-0" />
+                <IconUser size={13} className="text-indigo-600 shrink-0" />
                 <span className="font-medium truncate">{activeChat.email}</span>
               </div>
               <div className="flex items-center gap-2 text-xs text-gray-700">
-                <IconBuilding size={13} className="text-emerald-600 shrink-0" />
+                <IconBuilding size={13} className="text-indigo-600 shrink-0" />
                 <span className="font-medium">{activeChat.company}</span>
               </div>
             </div>
@@ -305,12 +305,12 @@ export default function Messages() {
 
           <div className="space-y-2">
             <h4 className="text-[10px] font-extrabold text-gray-400 uppercase tracking-wider">Upcoming Meetings</h4>
-            <div className="p-3 bg-emerald-50/60 rounded-xl border border-emerald-200/60 space-y-1">
-              <div className="flex items-center gap-1.5 text-[10px] font-bold text-emerald-700">
+            <div className="p-3 bg-indigo-50/60 rounded-xl border border-indigo-200/60 space-y-1">
+              <div className="flex items-center gap-1.5 text-[10px] font-bold text-indigo-700">
                 <IconCalendar size={12} /> Tomorrow, 10:00 AM
               </div>
               <p className="text-xs font-black text-gray-900">Discovery Call</p>
-              <span className="inline-block text-[9px] bg-emerald-600 text-white px-2 py-0.5 rounded-md font-bold">Scheduled</span>
+              <span className="inline-block text-[9px] bg-indigo-600 text-white px-2 py-0.5 rounded-md font-bold">Scheduled</span>
             </div>
           </div>
 
@@ -346,7 +346,7 @@ export default function Messages() {
                     placeholder="e.g. Usman Ali"
                     value={newChatData.name}
                     onChange={(e) => setNewChatData({...newChatData, name: e.target.value})}
-                    className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-xs text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500"
+                    className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-xs text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500"
                   />
                 </div>
               </div>
@@ -360,7 +360,7 @@ export default function Messages() {
                     placeholder="e.g. Tech Solutions"
                     value={newChatData.company}
                     onChange={(e) => setNewChatData({...newChatData, company: e.target.value})}
-                    className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-xs text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500"
+                    className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-xs text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500"
                   />
                 </div>
               </div>
@@ -374,7 +374,7 @@ export default function Messages() {
                     placeholder="e.g. client@example.com"
                     value={newChatData.email}
                     onChange={(e) => setNewChatData({...newChatData, email: e.target.value})}
-                    className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-xs text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500"
+                    className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-xs text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500"
                   />
                 </div>
               </div>
@@ -388,7 +388,7 @@ export default function Messages() {
                     placeholder="e.g. +92 300 1234567"
                     value={newChatData.phone}
                     onChange={(e) => setNewChatData({...newChatData, phone: e.target.value})}
-                    className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-xs text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500"
+                    className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-xs text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500"
                   />
                 </div>
               </div>
@@ -403,7 +403,7 @@ export default function Messages() {
                 </button>
                 <button 
                   type="submit"
-                  className="px-5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl shadow-md shadow-emerald-200 transition-colors cursor-pointer"
+                  className="px-5 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-xl shadow-md shadow-indigo-200 transition-colors cursor-pointer"
                 >
                   Create Chat
                 </button>

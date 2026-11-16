@@ -58,22 +58,22 @@ export default function Projects() {
 
           <div className="flex items-center gap-2 px-3.5 py-2 bg-gray-50 border border-gray-100 rounded-2xl">
             <span className="text-[11px] font-bold text-gray-400 uppercase">Ongoing</span>
-            <span className="text-xs font-black text-emerald-600">0</span>
+            <span className="text-xs font-black text-indigo-600">0</span>
           </div>
 
           <div className="flex items-center gap-2 px-3.5 py-2 bg-gray-50 border border-gray-100 rounded-2xl">
-            <span className="text-[11px] font-bold text-emerald-600 uppercase">Budget</span>
-            <span className="text-xs font-black text-emerald-600">$0</span>
+            <span className="text-[11px] font-bold text-indigo-600 uppercase">Budget</span>
+            <span className="text-xs font-black text-indigo-600">$0</span>
           </div>
 
           <div className="flex items-center gap-2 px-3.5 py-2 bg-gray-50 border border-gray-100 rounded-2xl">
-            <span className="text-[11px] font-bold text-emerald-600 uppercase">Paid</span>
-            <span className="text-xs font-black text-emerald-600">$0</span>
+            <span className="text-[11px] font-bold text-indigo-600 uppercase">Paid</span>
+            <span className="text-xs font-black text-indigo-600">$0</span>
           </div>
 
-          <div className="flex items-center gap-2 px-3.5 py-2 bg-amber-50/70 border border-amber-200/60 rounded-2xl">
-            <span className="text-[11px] font-bold text-amber-700 uppercase">Retainers</span>
-            <span className="text-xs font-black text-amber-700">0 · $0/mo</span>
+          <div className="flex items-center gap-2 px-3.5 py-2 bg-indigo-50/70 border border-indigo-200/60 rounded-2xl">
+            <span className="text-[11px] font-bold text-indigo-700 uppercase">Retainers</span>
+            <span className="text-xs font-black text-indigo-700">0 · $0/mo</span>
           </div>
         </div>
       </div>
@@ -87,20 +87,20 @@ export default function Projects() {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search projects, clients, or descriptions..."
-            className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500 shadow-2xs"
+            className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500 shadow-2xs"
           />
         </div>
 
         <div className="flex items-center gap-2.5 w-full sm:w-auto justify-end flex-wrap">
           <button 
             onClick={() => setShowNewModal(true)}
-            className="flex items-center gap-1.5 px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl shadow-md shadow-emerald-200 transition-all cursor-pointer active:scale-95"
+            className="flex items-center gap-1.5 px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-xl shadow-md shadow-indigo-200 transition-all cursor-pointer active:scale-95"
           >
             <IconPlus size={16} /> New
           </button>
 
           <button className="flex items-center gap-1.5 px-4 py-2.5 bg-white hover:bg-gray-50 text-gray-700 border border-gray-200 text-xs font-bold rounded-xl transition-colors cursor-pointer shadow-2xs">
-            <IconFileSpreadsheet size={15} className="text-emerald-600" /> CSV
+            <IconFileSpreadsheet size={15} className="text-indigo-600" /> CSV
           </button>
 
           <button className="flex items-center gap-1.5 px-4 py-2.5 bg-white hover:bg-gray-50 text-gray-700 border border-gray-200 text-xs font-bold rounded-xl transition-colors cursor-pointer shadow-2xs">
@@ -120,7 +120,7 @@ export default function Projects() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
         {[
           { name: 'New', color: 'bg-purple-500', count: 0, textKey: 'new' },
-          { name: 'Ongoing', color: 'bg-emerald-500', count: 0, textKey: 'ongoing' },
+          { name: 'Ongoing', color: 'bg-indigo-500', count: 0, textKey: 'ongoing' },
           { name: 'Completed', color: 'bg-blue-500', count: 0, textKey: 'completed' },
         ].map((stage) => (
           <div key={stage.name} className="bg-white p-5 rounded-3xl border border-gray-100 shadow-xs flex flex-col h-550px">
@@ -133,7 +133,7 @@ export default function Projects() {
               </div>
               <button 
                 onClick={() => setShowNewModal(true)}
-                className="p-1.5 hover:bg-gray-100 rounded-xl text-gray-400 hover:text-emerald-600 transition-colors cursor-pointer"
+                className="p-1.5 hover:bg-gray-100 rounded-xl text-gray-400 hover:text-indigo-600 transition-colors cursor-pointer"
               >
                 <IconPlus size={16} />
               </button>
@@ -179,7 +179,7 @@ export default function Projects() {
                     placeholder="e.g. E-Commerce Redesign"
                     value={projectData.projectName}
                     onChange={(e) => setProjectData({...projectData, projectName: e.target.value})}
-                    className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500"
+                    className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500"
                   />
                 </div>
               </div>
@@ -195,7 +195,7 @@ export default function Projects() {
                       placeholder="Client or Company"
                       value={projectData.clientName}
                       onChange={(e) => setProjectData({...projectData, clientName: e.target.value})}
-                      className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500"
+                      className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500"
                     />
                   </div>
                 </div>
@@ -204,7 +204,7 @@ export default function Projects() {
                   <select 
                     value={projectData.stage}
                     onChange={(e) => setProjectData({...projectData, stage: e.target.value})}
-                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 focus:outline-none focus:border-emerald-500"
+                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 focus:outline-none focus:border-indigo-500"
                   >
                     <option>New</option>
                     <option>Ongoing</option>
@@ -223,7 +223,7 @@ export default function Projects() {
                       placeholder="0.00"
                       value={projectData.budget}
                       onChange={(e) => setProjectData({...projectData, budget: e.target.value})}
-                      className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500"
+                      className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500"
                     />
                   </div>
                 </div>
@@ -236,7 +236,7 @@ export default function Projects() {
                       placeholder="0.00"
                       value={projectData.paidAmount}
                       onChange={(e) => setProjectData({...projectData, paidAmount: e.target.value})}
-                      className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500"
+                      className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500"
                     />
                   </div>
                 </div>
@@ -250,7 +250,7 @@ export default function Projects() {
                     type="date" 
                     value={projectData.deadline}
                     onChange={(e) => setProjectData({...projectData, deadline: e.target.value})}
-                    className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 focus:outline-none focus:border-emerald-500"
+                    className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 focus:outline-none focus:border-indigo-500"
                   />
                 </div>
               </div>
@@ -262,7 +262,7 @@ export default function Projects() {
                   placeholder="Details about project goals and deliverables..."
                   value={projectData.description}
                   onChange={(e) => setProjectData({...projectData, description: e.target.value})}
-                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500 resize-none"
+                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500 resize-none"
                 />
               </div>
 
@@ -276,7 +276,7 @@ export default function Projects() {
                 </button>
                 <button 
                   type="submit"
-                  className="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl shadow-sm shadow-emerald-200 transition-colors cursor-pointer"
+                  className="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-xl shadow-sm shadow-indigo-200 transition-colors cursor-pointer"
                 >
                   Create Project
                 </button>

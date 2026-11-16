@@ -46,11 +46,11 @@ export default function PublicProfile() {
       {/* -- Header Section -- */}
       <div className="bg-white p-6 sm:p-8 rounded-3xl border border-gray-100 shadow-xs flex flex-col md:flex-row md:items-center md:justify-between gap-6">
         <div className="space-y-1">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold mb-1">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-xs font-bold mb-1">
             <IconWorld size={14} /> Public Profile
           </div>
           <h2 className="text-xl sm:text-2xl font-black text-gray-900 tracking-tight">
-            Your public page on MeerWork
+            Your public page on Agency Solutions
           </h2>
           <p className="text-xs sm:text-sm text-gray-500 max-w-xl">
             The reviews your clients left, plus whatever you want prospects to know about your agency or professional services.
@@ -79,9 +79,9 @@ export default function PublicProfile() {
       </div>
 
       {/* -- Share Link Banner -- */}
-      <div className="bg-linear-to-r from-emerald-900 to-gray-900 text-white p-6 rounded-3xl shadow-md flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+      <div className="bg-linear-to-r from-indigo-900 to-gray-900 text-white p-6 rounded-3xl shadow-md flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h4 className="text-xs font-bold uppercase tracking-wider text-emerald-400">Your public page link</h4>
+          <h4 className="text-xs font-bold uppercase tracking-wider text-indigo-400">Your public page link</h4>
           <p className="text-xs text-gray-300 mt-0.5">Share it anywhere — anyone can open it, no login needed.</p>
           <p className="text-sm sm:text-base font-black text-white mt-2 font-mono bg-white/10 px-3 py-1 rounded-xl inline-block border border-white/10">
             {publicUrl}
@@ -93,7 +93,7 @@ export default function PublicProfile() {
             onClick={handleCopyLink}
             className="flex items-center gap-1.5 px-4 py-2.5 bg-white/10 hover:bg-white/20 text-white text-xs font-bold rounded-xl transition-all cursor-pointer border border-white/10 backdrop-blur-xs"
           >
-            {copied ? <IconCheck size={16} className="text-emerald-400" /> : <IconCopy size={16} />} 
+            {copied ? <IconCheck size={16} className="text-indigo-400" /> : <IconCopy size={16} />} 
             {copied ? 'Copied!' : 'Copy Link'}
           </button>
 
@@ -101,7 +101,7 @@ export default function PublicProfile() {
             href={`https://${publicUrl}`} 
             target="_blank" 
             rel="noreferrer"
-            className="flex items-center gap-1.5 px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl transition-all cursor-pointer shadow-md"
+            className="flex items-center gap-1.5 px-4 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-xl transition-all cursor-pointer shadow-md"
           >
             <IconExternalLink size={16} /> Open Page
           </a>
@@ -125,7 +125,7 @@ export default function PublicProfile() {
                   value={profile.headline}
                   onChange={(e) => setProfile({...profile, headline: e.target.value})}
                   placeholder="What you do (e.g. Full-Stack Developer)"
-                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 focus:outline-none focus:border-emerald-500"
+                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 focus:outline-none focus:border-indigo-500"
                 />
               </div>
 
@@ -140,7 +140,7 @@ export default function PublicProfile() {
                   value={profile.about}
                   onChange={(e) => setProfile({...profile, about: e.target.value})}
                   placeholder="Tell prospects about your experience and services..."
-                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 focus:outline-none focus:border-emerald-500 resize-none"
+                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 focus:outline-none focus:border-indigo-500 resize-none"
                 />
               </div>
 
@@ -154,7 +154,7 @@ export default function PublicProfile() {
                       value={profile.location}
                       onChange={(e) => setProfile({...profile, location: e.target.value})}
                       placeholder="City, Country"
-                      className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 focus:outline-none focus:border-emerald-500"
+                      className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 focus:outline-none focus:border-indigo-500"
                     />
                   </div>
                 </div>
@@ -168,7 +168,7 @@ export default function PublicProfile() {
                       value={profile.phone}
                       onChange={(e) => setProfile({...profile, phone: e.target.value})}
                       placeholder="+1 (555) 000-0000"
-                      className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 focus:outline-none focus:border-emerald-500"
+                      className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 focus:outline-none focus:border-indigo-500"
                     />
                   </div>
                 </div>
@@ -184,7 +184,7 @@ export default function PublicProfile() {
                       value={profile.email}
                       onChange={(e) => setProfile({...profile, email: e.target.value})}
                       placeholder="hello@yourdomain.com"
-                      className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 focus:outline-none focus:border-emerald-500"
+                      className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 focus:outline-none focus:border-indigo-500"
                     />
                   </div>
                 </div>
@@ -198,7 +198,7 @@ export default function PublicProfile() {
                       value={profile.website}
                       onChange={(e) => setProfile({...profile, website: e.target.value})}
                       placeholder="https://yourwebsite.com"
-                      className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 focus:outline-none focus:border-emerald-500"
+                      className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 focus:outline-none focus:border-indigo-500"
                     />
                   </div>
                 </div>
@@ -211,7 +211,7 @@ export default function PublicProfile() {
               <div className="flex justify-end pt-4 border-t border-gray-100">
                 <button 
                   type="submit"
-                  className="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl shadow-md shadow-emerald-200 transition-all cursor-pointer"
+                  className="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-xl shadow-md shadow-indigo-200 transition-all cursor-pointer"
                 >
                   Save changes
                 </button>
@@ -226,7 +226,7 @@ export default function PublicProfile() {
             <div className="bg-white p-6 rounded-3xl border border-gray-100 shadow-xs space-y-4">
               <div className="flex items-baseline gap-2">
                 <span className="text-3xl font-black text-gray-900">0.0</span>
-                <div className="flex text-amber-400">
+                <div className="flex text-indigo-400">
                   {[...Array(5)].map((_, i) => (
                     <IconStar key={i} size={16} className="fill-gray-200 text-gray-200" />
                   ))}
@@ -239,7 +239,7 @@ export default function PublicProfile() {
                   <div key={star} className="flex items-center gap-3 text-xs">
                     <span className="w-10 font-bold text-gray-600">{star}-star</span>
                     <div className="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden">
-                      <div className="bg-amber-400 h-full w-0"></div>
+                      <div className="bg-indigo-400 h-full w-0"></div>
                     </div>
                     <span className="w-8 text-right text-gray-400">0%</span>
                   </div>
@@ -260,12 +260,12 @@ export default function PublicProfile() {
                     onClick={handleCopyBadge}
                     className="flex items-center gap-1 px-3 py-1.5 bg-gray-50 hover:bg-gray-100 text-gray-700 text-xs font-bold rounded-xl border border-gray-200 transition-colors cursor-pointer"
                   >
-                    {badgeCopied ? <IconCheck size={14} className="text-emerald-600" /> : <IconCode size={14} />}
+                    {badgeCopied ? <IconCheck size={14} className="text-indigo-600" /> : <IconCode size={14} />}
                     {badgeCopied ? 'Copied Code!' : 'Copy Embed Code'}
                   </button>
                 </div>
                 <p className="text-xs text-gray-500 mb-4">
-                  Paste this anywhere on your website to show your live rating, collected from verified clients through MeerWork.
+                  Paste this anywhere on your website to show your live rating, collected from verified clients through Agency Solutions.
                 </p>
 
                 {/* Live Preview Box */}
@@ -273,13 +273,13 @@ export default function PublicProfile() {
                   <div className="space-y-1">
                     <p className="text-[10px] font-bold text-gray-400 uppercase">Live preview</p>
                     <div className="flex items-center gap-2 bg-white px-3 py-2 rounded-xl border border-gray-200 shadow-2xs">
-                      <div className="flex text-amber-400">
-                        {[...Array(5)].map((_, i) => (<IconStar key={i} size={12} className="fill-amber-400" />))}
+                      <div className="flex text-indigo-400">
+                        {[...Array(5)].map((_, i) => (<IconStar key={i} size={12} className="fill-indigo-400" />))}
                       </div>
                       <span className="text-xs font-black text-gray-800">5.0 / 5.0 Rating</span>
                     </div>
                   </div>
-                  <span className="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-lg">MeerWork Verified</span>
+                  <span className="text-[10px] font-bold text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-lg">Agency Solutions Verified</span>
                 </div>
               </div>
 
@@ -297,11 +297,11 @@ export default function PublicProfile() {
         /* -- Live Preview Mode -- */
         <div className="bg-white rounded-3xl border border-gray-100 p-8 sm:p-12 shadow-sm space-y-8 animate-scaleUp">
           <div className="text-center space-y-3 max-w-lg mx-auto">
-            <div className="w-16 h-16 bg-emerald-600 text-white rounded-2xl flex items-center justify-center font-black text-2xl mx-auto shadow-md">
+            <div className="w-16 h-16 bg-indigo-600 text-white rounded-2xl flex items-center justify-center font-black text-2xl mx-auto shadow-md">
               MR
             </div>
             <h1 className="text-2xl sm:text-3xl font-black text-gray-900">Mahim Rana</h1>
-            <p className="text-sm font-bold text-emerald-600">{profile.headline}</p>
+            <p className="text-sm font-bold text-indigo-600">{profile.headline}</p>
             <p className="text-xs text-gray-500 leading-relaxed">{profile.about}</p>
             
             <div className="flex items-center justify-center gap-4 text-xs text-gray-400 pt-2">

@@ -117,7 +117,7 @@ export default function Tasks() {
         </div>
         <button
           onClick={() => setShowCreateModal(true)}
-          className="flex items-center gap-1.5 px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl shadow-md shadow-emerald-200 transition-all cursor-pointer active:scale-95 self-start sm:self-auto"
+          className="flex items-center gap-1.5 px-4 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-xl shadow-md shadow-indigo-200 transition-all cursor-pointer active:scale-95 self-start sm:self-auto"
         >
           <IconPlus size={16} /> Create Task
         </button>
@@ -134,7 +134,7 @@ export default function Tasks() {
               onClick={() => setActiveRole(role)}
               className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer shrink-0 ${
                 activeRole === role 
-                  ? 'bg-emerald-600 text-white shadow-xs' 
+                  ? 'bg-indigo-600 text-white shadow-xs' 
                   : 'bg-gray-50 text-gray-600 hover:bg-gray-100 border border-gray-200/60'
               }`}
             >
@@ -168,7 +168,7 @@ export default function Tasks() {
             <select
               value={selectedMember}
               onChange={(e) => setSelectedMember(e.target.value)}
-              className="px-3 py-1.5 bg-white border border-gray-200 rounded-xl text-xs font-bold text-gray-800 focus:outline-none focus:border-emerald-500 cursor-pointer"
+              className="px-3 py-1.5 bg-white border border-gray-200 rounded-xl text-xs font-bold text-gray-800 focus:outline-none focus:border-indigo-500 cursor-pointer"
             >
               <option value="Mahim Rana">Mahim Rana</option>
               <option value="Dr. Zahid">Dr. Zahid</option>
@@ -188,7 +188,7 @@ export default function Tasks() {
             placeholder="Search tasks or assignees..." 
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-xs text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500 shadow-2xs"
+            className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-xs text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500 shadow-2xs"
           />
         </div>
       </div>
@@ -199,7 +199,7 @@ export default function Tasks() {
           <h3 className="text-xs font-extrabold text-gray-400 uppercase tracking-wider">
             {viewMode === 'team' ? `${activeRole} Tasks` : `Checklist for ${selectedMember}`}
           </h3>
-          <span className="text-xs font-bold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-md border border-emerald-200">
+          <span className="text-xs font-bold text-indigo-700 bg-indigo-50 px-2.5 py-0.5 rounded-md border border-indigo-200">
             {filteredTasks.length} Tasks Found
           </span>
         </div>
@@ -215,8 +215,8 @@ export default function Tasks() {
                     onClick={() => handleStatusToggle(task.id)}
                     className={`w-5 h-5 rounded-lg border flex items-center justify-center shrink-0 mt-0.5 cursor-pointer transition-all ${
                       task.status === 'Completed' 
-                        ? 'bg-emerald-600 border-emerald-600 text-white' 
-                        : 'border-gray-300 bg-white hover:border-emerald-500'
+                        ? 'bg-indigo-600 border-indigo-600 text-white' 
+                        : 'border-gray-300 bg-white hover:border-indigo-500'
                     }`}
                     title="Toggle Status"
                   >
@@ -230,13 +230,13 @@ export default function Tasks() {
                     
                     <div className="flex flex-wrap items-center gap-2 mt-1.5">
                       <span className="inline-flex items-center gap-1 text-[10px] font-bold text-gray-600 bg-gray-100 px-2 py-0.5 rounded-md">
-                        <IconBriefcase size={11} className="text-emerald-600" /> {task.role}
+                        <IconBriefcase size={11} className="text-indigo-600" /> {task.role}
                       </span>
                       <span className="inline-flex items-center gap-1 text-[10px] font-bold text-gray-600 bg-gray-100 px-2 py-0.5 rounded-md">
-                        <IconUser size={11} className="text-emerald-600" /> {task.assignee}
+                        <IconUser size={11} className="text-indigo-600" /> {task.assignee}
                       </span>
                       <span className="inline-flex items-center gap-1 text-[10px] font-bold text-gray-600 bg-gray-100 px-2 py-0.5 rounded-md">
-                        <IconCalendar size={11} className="text-emerald-600" /> {task.dueDate || 'No Date'}
+                        <IconCalendar size={11} className="text-indigo-600" /> {task.dueDate || 'No Date'}
                       </span>
                     </div>
                   </div>
@@ -249,7 +249,7 @@ export default function Tasks() {
                     task.priority === 'High' 
                       ? 'bg-red-50 text-red-600 border border-red-200' 
                       : task.priority === 'Medium'
-                      ? 'bg-amber-50 text-amber-600 border border-amber-200'
+                      ? 'bg-indigo-50 text-indigo-600 border border-indigo-200'
                       : 'bg-blue-50 text-blue-600 border border-blue-200'
                   }`}>
                     {task.priority}
@@ -258,9 +258,9 @@ export default function Tasks() {
                   {/* Status Badge */}
                   <span className={`px-2.5 py-1 rounded-lg text-[10px] font-bold ${
                     task.status === 'Completed' 
-                      ? 'bg-emerald-50 text-emerald-700 border border-emerald-200' 
+                      ? 'bg-indigo-50 text-indigo-700 border border-indigo-200' 
                       : task.status === 'In Progress'
-                      ? 'bg-amber-50 text-amber-700 border border-amber-200'
+                      ? 'bg-indigo-50 text-indigo-700 border border-indigo-200'
                       : 'bg-gray-100 text-gray-600'
                   }`}>
                     {task.status}
@@ -311,7 +311,7 @@ export default function Tasks() {
                   placeholder="e.g. Design dashboard UI"
                   value={newTask.title}
                   onChange={(e) => setNewTask({...newTask, title: e.target.value})}
-                  className="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl text-xs text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500"
+                  className="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl text-xs text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500"
                 />
               </div>
 
@@ -321,7 +321,7 @@ export default function Tasks() {
                   <select
                     value={newTask.role}
                     onChange={(e) => setNewTask({...newTask, role: e.target.value})}
-                    className="w-full px-3 py-2.5 bg-white border border-gray-200 rounded-xl text-xs text-gray-900 focus:outline-none focus:border-emerald-500 cursor-pointer"
+                    className="w-full px-3 py-2.5 bg-white border border-gray-200 rounded-xl text-xs text-gray-900 focus:outline-none focus:border-indigo-500 cursor-pointer"
                   >
                     <option value="Developer">Developer</option>
                     <option value="Sales">Sales</option>
@@ -334,7 +334,7 @@ export default function Tasks() {
                   <select
                     value={newTask.assignee}
                     onChange={(e) => setNewTask({...newTask, assignee: e.target.value})}
-                    className="w-full px-3 py-2.5 bg-white border border-gray-200 rounded-xl text-xs text-gray-900 focus:outline-none focus:border-emerald-500 cursor-pointer"
+                    className="w-full px-3 py-2.5 bg-white border border-gray-200 rounded-xl text-xs text-gray-900 focus:outline-none focus:border-indigo-500 cursor-pointer"
                   >
                     <option value="Mahim Rana">Mahim Rana</option>
                     <option value="Dr. Zahid">Dr. Zahid</option>
@@ -349,7 +349,7 @@ export default function Tasks() {
                   <select
                     value={newTask.priority}
                     onChange={(e) => setNewTask({...newTask, priority: e.target.value})}
-                    className="w-full px-3 py-2.5 bg-white border border-gray-200 rounded-xl text-xs text-gray-900 focus:outline-none focus:border-emerald-500 cursor-pointer"
+                    className="w-full px-3 py-2.5 bg-white border border-gray-200 rounded-xl text-xs text-gray-900 focus:outline-none focus:border-indigo-500 cursor-pointer"
                   >
                     <option value="High">High</option>
                     <option value="Medium">Medium</option>
@@ -363,7 +363,7 @@ export default function Tasks() {
                     type="date"
                     value={newTask.dueDate}
                     onChange={(e) => setNewTask({...newTask, dueDate: e.target.value})}
-                    className="w-full px-3 py-2.5 bg-white border border-gray-200 rounded-xl text-xs text-gray-900 focus:outline-none focus:border-emerald-500"
+                    className="w-full px-3 py-2.5 bg-white border border-gray-200 rounded-xl text-xs text-gray-900 focus:outline-none focus:border-indigo-500"
                   />
                 </div>
               </div>
@@ -378,7 +378,7 @@ export default function Tasks() {
                 </button>
                 <button 
                   type="submit"
-                  className="px-5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl shadow-md shadow-emerald-200 transition-colors cursor-pointer"
+                  className="px-5 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-xl shadow-md shadow-indigo-200 transition-colors cursor-pointer"
                 >
                   Create Task
                 </button>

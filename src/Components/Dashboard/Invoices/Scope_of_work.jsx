@@ -7,7 +7,7 @@ import {
 
 export default function Scope_of_work() {
   const [logo, setLogo] = useState(null);
-  const [agencyInfo, setAgencyInfo] = useState('Meer Tech Solution\nSoftware & Web Development Agency\ncontact@meertech.com');
+  const [agencyInfo, setAgencyInfo] = useState('Agency Solutions\nSoftware & Web Development Agency\ncontact@meertech.com');
   const [clientInfo, setClientInfo] = useState('');
   const [documentId, setDocumentId] = useState('SOW-2026-001');
   const [date, setDate] = useState(new Date().toISOString().split('T')[0]);
@@ -24,7 +24,7 @@ export default function Scope_of_work() {
   });
 
   const [overview, setOverview] = useState(
-    'This Statement of Work (SOW) defines the specific tasks, deliverables, and timelines associated with the upcoming project engagement between Meer Tech Solution and the Client.'
+    'This Statement of Work (SOW) defines the specific tasks, deliverables, and timelines associated with the upcoming project engagement between Agency Solutions and the Client.'
   );
 
   // Scope Deliverables Builder
@@ -88,7 +88,7 @@ export default function Scope_of_work() {
     const element = documentRef.current;
     const opt = {
       margin: 0.3,
-      filename: `Scope-of-Work-${documentId || 'MeerTech'}.pdf`,
+      filename: `Scope-of-Work-${documentId || 'AgencySolutions'}.pdf`,
       image: { type: 'jpeg', quality: 0.98 },
       html2canvas: { scale: 2, useCORS: true },
       jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
@@ -97,31 +97,31 @@ export default function Scope_of_work() {
   };
 
   return (
-    <div className="p-4 sm:p-8 max-w-5xl mx-auto flex flex-col gap-8 bg-gray-100 min-h-screen text-gray-900 font-sans caret-emerald-600">
+    <div className="p-4 sm:p-8 max-w-5xl mx-auto flex flex-col gap-8 bg-gray-100 min-h-screen text-gray-900 font-sans caret-indigo-600">
       
       {/* TOP CONTROLS BAR */}
       <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="bg-white p-5 rounded-3xl border border-gray-200 shadow-sm space-y-3">
-          <h3 className="text-xs font-bold uppercase tracking-wider text-emerald-600 flex items-center gap-1.5">
+          <h3 className="text-xs font-bold uppercase tracking-wider text-indigo-600 flex items-center gap-1.5">
             <IconFileText size={16} /> Actions
           </h3>
           <button 
             onClick={handleDownloadPDF}
-            className="w-full bg-emerald-600 hover:bg-emerald-500 text-white p-3.5 rounded-2xl font-bold text-sm flex items-center justify-center gap-2 shadow-md transition-all cursor-pointer"
+            className="w-full bg-indigo-600 hover:bg-indigo-500 text-white p-3.5 rounded-2xl font-bold text-sm flex items-center justify-center gap-2 shadow-md transition-all cursor-pointer"
           >
             <IconDownload size={18} /> Download Scope of Work PDF
           </button>
         </div>
 
         <div className="bg-white p-5 rounded-3xl border border-gray-200 shadow-sm space-y-4">
-          <h3 className="text-xs font-bold uppercase tracking-wider text-emerald-600">Preferences</h3>
+          <h3 className="text-xs font-bold uppercase tracking-wider text-indigo-600">Preferences</h3>
           <div>
             <label className="text-xs font-semibold text-gray-700 block mb-1">Document ID / Reference</label>
             <input 
               type="text"
               value={documentId}
               onChange={(e) => setDocumentId(e.target.value)}
-              className="w-full p-2 border border-gray-300 rounded-xl text-xs focus:outline-none focus:border-emerald-600 bg-white font-bold"
+              className="w-full p-2 border border-gray-300 rounded-xl text-xs focus:outline-none focus:border-indigo-600 bg-white font-bold"
             />
           </div>
         </div>
@@ -138,7 +138,7 @@ export default function Scope_of_work() {
                 <img src={logo} alt="Logo" className="w-full h-full object-cover" />
               ) : (
                 <label className="cursor-pointer text-center p-2">
-                  <IconCloudUpload size={22} className="mx-auto mb-1 text-emerald-600" />
+                  <IconCloudUpload size={22} className="mx-auto mb-1 text-indigo-600" />
                   <span className="text-[10px] font-bold text-gray-600">+ Add Logo</span>
                   <input type="file" accept="image/*" onChange={handleLogoChange} className="hidden" />
                 </label>
@@ -151,7 +151,7 @@ export default function Scope_of_work() {
                 type="text"
                 value={sowTitle}
                 onChange={(e) => setSowTitle(e.target.value)}
-                className="w-full sm:text-right text-xs font-bold text-emerald-600 mt-1 border-b border-transparent focus:border-emerald-600 focus:outline-none bg-transparent"
+                className="w-full sm:text-right text-xs font-bold text-indigo-600 mt-1 border-b border-transparent focus:border-indigo-600 focus:outline-none bg-transparent"
               />
               <p className="text-xs text-gray-400 mt-1">Date: {date}</p>
             </div>
@@ -165,7 +165,7 @@ export default function Scope_of_work() {
                 rows="3" 
                 value={agencyInfo} 
                 onChange={(e) => setAgencyInfo(e.target.value)}
-                className="w-full p-3 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-emerald-600 bg-gray-50/50 resize-none font-medium text-gray-800"
+                className="w-full p-3 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-indigo-600 bg-gray-50/50 resize-none font-medium text-gray-800"
               />
             </div>
             <div>
@@ -175,7 +175,7 @@ export default function Scope_of_work() {
                 placeholder="Client Name, Company Name, Email & Address..." 
                 value={clientInfo} 
                 onChange={(e) => setClientInfo(e.target.value)}
-                className="w-full p-3 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-emerald-600 bg-gray-50/50 resize-none font-medium text-gray-800"
+                className="w-full p-3 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-indigo-600 bg-gray-50/50 resize-none font-medium text-gray-800"
               />
             </div>
           </div>
@@ -186,13 +186,13 @@ export default function Scope_of_work() {
               type="text" 
               value={headings.sec1} 
               onChange={(e) => setHeadings({...headings, sec1: e.target.value})}
-              className="text-sm font-black uppercase tracking-wider text-emerald-700 border-b pb-1 w-full focus:outline-none bg-transparent"
+              className="text-sm font-black uppercase tracking-wider text-indigo-700 border-b pb-1 w-full focus:outline-none bg-transparent"
             />
             <textarea 
               rows="3"
               value={overview}
               onChange={(e) => setOverview(e.target.value)}
-              className="w-full p-3 border border-gray-200 rounded-xl text-xs font-medium bg-gray-50/30 resize-none focus:outline-none focus:border-emerald-600 text-gray-700"
+              className="w-full p-3 border border-gray-200 rounded-xl text-xs font-medium bg-gray-50/30 resize-none focus:outline-none focus:border-indigo-600 text-gray-700"
             />
           </div>
 
@@ -203,9 +203,9 @@ export default function Scope_of_work() {
                 type="text" 
                 value={headings.sec2} 
                 onChange={(e) => setHeadings({...headings, sec2: e.target.value})}
-                className="text-sm font-black uppercase tracking-wider text-emerald-700 w-full focus:outline-none bg-transparent"
+                className="text-sm font-black uppercase tracking-wider text-indigo-700 w-full focus:outline-none bg-transparent"
               />
-              <button onClick={addScope} className="text-emerald-600 hover:text-emerald-700 text-xs font-bold flex items-center gap-1 cursor-pointer whitespace-nowrap ml-2">
+              <button onClick={addScope} className="text-indigo-600 hover:text-indigo-700 text-xs font-bold flex items-center gap-1 cursor-pointer whitespace-nowrap ml-2">
                 <IconPlus size={14} /> Add Task
               </button>
             </div>
@@ -250,9 +250,9 @@ export default function Scope_of_work() {
                 type="text" 
                 value={headings.sec3} 
                 onChange={(e) => setHeadings({...headings, sec3: e.target.value})}
-                className="text-sm font-black uppercase tracking-wider text-emerald-700 w-full focus:outline-none bg-transparent"
+                className="text-sm font-black uppercase tracking-wider text-indigo-700 w-full focus:outline-none bg-transparent"
               />
-              <button onClick={addMilestone} className="text-emerald-600 hover:text-emerald-700 text-xs font-bold flex items-center gap-1 cursor-pointer whitespace-nowrap ml-2">
+              <button onClick={addMilestone} className="text-indigo-600 hover:text-indigo-700 text-xs font-bold flex items-center gap-1 cursor-pointer whitespace-nowrap ml-2">
                 <IconPlus size={14} /> Add Milestone
               </button>
             </div>
@@ -298,9 +298,9 @@ export default function Scope_of_work() {
                 type="text" 
                 value={headings.sec4} 
                 onChange={(e) => setHeadings({...headings, sec4: e.target.value})}
-                className="text-sm font-black uppercase tracking-wider text-emerald-700 w-full focus:outline-none bg-transparent"
+                className="text-sm font-black uppercase tracking-wider text-indigo-700 w-full focus:outline-none bg-transparent"
               />
-              <button onClick={addOutOfScope} className="text-emerald-600 hover:text-emerald-700 text-xs font-bold flex items-center gap-1 cursor-pointer whitespace-nowrap ml-2">
+              <button onClick={addOutOfScope} className="text-indigo-600 hover:text-indigo-700 text-xs font-bold flex items-center gap-1 cursor-pointer whitespace-nowrap ml-2">
                 <IconPlus size={14} /> Add Item
               </button>
             </div>
@@ -335,16 +335,16 @@ export default function Scope_of_work() {
                 type="text" 
                 value={headings.sec5} 
                 onChange={(e) => setHeadings({...headings, sec5: e.target.value})}
-                className="text-sm font-black uppercase tracking-wider text-emerald-700 w-full focus:outline-none bg-transparent"
+                className="text-sm font-black uppercase tracking-wider text-indigo-700 w-full focus:outline-none bg-transparent"
               />
-              <button onClick={addResponsibility} className="text-emerald-600 hover:text-emerald-700 text-xs font-bold flex items-center gap-1 cursor-pointer whitespace-nowrap ml-2">
+              <button onClick={addResponsibility} className="text-indigo-600 hover:text-indigo-700 text-xs font-bold flex items-center gap-1 cursor-pointer whitespace-nowrap ml-2">
                 <IconPlus size={14} /> Add Item
               </button>
             </div>
             <div className="space-y-2">
               {responsibilities.map((item, index) => (
                 <div key={index} className="flex items-center gap-2 bg-gray-50/40 p-2.5 rounded-xl border border-gray-100">
-                  <span className="text-xs font-bold text-emerald-600">•</span>
+                  <span className="text-xs font-bold text-indigo-600">•</span>
                   <input 
                     type="text" 
                     value={item} 
@@ -368,7 +368,7 @@ export default function Scope_of_work() {
           {/* Sign-off Panel */}
           <div className="pt-8 border-t border-gray-100 grid grid-cols-1 sm:grid-cols-2 gap-12 text-xs">
             <div className="space-y-6">
-              <p className="font-bold text-gray-600">Meer Tech Solution Representative:</p>
+              <p className="font-bold text-gray-600">Agency Solutions Representative:</p>
               <div className="border-b border-gray-400 pb-1 text-gray-400 italic">Signature & Date</div>
             </div>
             <div className="space-y-6">

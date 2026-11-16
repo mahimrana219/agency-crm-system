@@ -77,7 +77,7 @@ export default function Leads() {
 
           <button 
             onClick={() => setShowNewLeadModal(true)}
-            className="flex items-center gap-1.5 px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl shadow-md shadow-emerald-200 transition-all cursor-pointer active:scale-95"
+            className="flex items-center gap-1.5 px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-xl shadow-md shadow-indigo-200 transition-all cursor-pointer active:scale-95"
           >
             <IconPlus size={16} /> New Lead
           </button>
@@ -97,12 +97,12 @@ export default function Leads() {
         </div>
 
         <div className="flex items-center gap-3.5 p-3 rounded-2xl bg-gray-50/70 border border-gray-100">
-          <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold text-sm">
+          <div className="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold text-sm">
             $
           </div>
           <div>
             <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wider">Pipeline Value</p>
-            <p className="text-sm sm:text-base font-black text-emerald-600">$0</p>
+            <p className="text-sm sm:text-base font-black text-indigo-600">$0</p>
           </div>
         </div>
 
@@ -117,7 +117,7 @@ export default function Leads() {
         </div>
 
         <div className="flex items-center gap-3.5 p-3 rounded-2xl bg-gray-50/70 border border-gray-100">
-          <div className="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center font-bold text-sm">
+          <div className="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold text-sm">
             %
           </div>
           <div>
@@ -134,7 +134,7 @@ export default function Leads() {
           <input 
             type="text" 
             placeholder="Search leads by name, company, email..."
-            className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500 shadow-2xs"
+            className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500 shadow-2xs"
           />
         </div>
 
@@ -153,11 +153,11 @@ export default function Leads() {
 
       {/* -- Select Mode Banner -- */}
       {isSelectMode && (
-        <div className="flex items-center justify-between bg-emerald-50/80 p-4 rounded-2xl border border-emerald-200 animate-fadeIn shadow-xs">
-          <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-emerald-900">
+        <div className="flex items-center justify-between bg-indigo-50/80 p-4 rounded-2xl border border-indigo-200 animate-fadeIn shadow-xs">
+          <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-indigo-900">
             <span>0 leads selected</span>
-            <span className="text-emerald-600 cursor-pointer hover:underline font-semibold ml-2">Select all (0)</span>
-            <span className="text-emerald-700/60 font-normal hidden sm:inline">(Click cards to select)</span>
+            <span className="text-indigo-600 cursor-pointer hover:underline font-semibold ml-2">Select all (0)</span>
+            <span className="text-indigo-700/60 font-normal hidden sm:inline">(Click cards to select)</span>
           </div>
           <div className="flex items-center gap-2">
             <button 
@@ -185,11 +185,11 @@ export default function Leads() {
             { name: 'Email Sent', color: 'bg-sky-500', count: 0 },
             { name: 'Reply Conversation', color: 'bg-indigo-500', count: 0 },
             { name: 'Pending', color: 'bg-yellow-500', count: 0 },
-            { name: 'Qualified', color: 'bg-amber-500', count: 0 },
-            { name: 'Proposal Sent', color: 'bg-orange-500', count: 0 },
-            { name: 'Won', color: 'bg-emerald-500', count: 0 },
+            { name: 'Qualified', color: 'bg-indigo-500', count: 0 },
+            { name: 'Proposal Sent', color: 'bg-indigo-500', count: 0 },
+            { name: 'Won', color: 'bg-indigo-500', count: 0 },
             { name: 'Rejected', color: 'bg-rose-600', count: 0 },
-            { name: 'Found Someone', color: 'bg-teal-500', count: 0 },
+            { name: 'Found Someone', color: 'bg-indigo-500', count: 0 },
             { name: 'Frustrated', color: 'bg-red-500', count: 0 },
             { name: 'Lost', color: 'bg-gray-500', count: 0 },
           ].map((stage) => (
@@ -203,7 +203,7 @@ export default function Leads() {
                 </div>
                 <button 
                   onClick={() => setShowNewLeadModal(true)}
-                  className="p-1.5 hover:bg-gray-100 rounded-xl text-gray-400 hover:text-emerald-600 transition-colors cursor-pointer"
+                  className="p-1.5 hover:bg-gray-100 rounded-xl text-gray-400 hover:text-indigo-600 transition-colors cursor-pointer"
                 >
                   <IconPlus size={16} />
                 </button>
@@ -212,7 +212,7 @@ export default function Leads() {
               {/* Add Lead Quick Button */}
               <button 
                 onClick={() => setShowNewLeadModal(true)}
-                className="w-full py-3 border border-dashed border-gray-200 rounded-2xl text-xs font-bold text-gray-500 hover:border-emerald-500 hover:text-emerald-600 transition-all flex items-center justify-center gap-1.5 mb-4 cursor-pointer bg-gray-50/50 hover:bg-emerald-50/20"
+                className="w-full py-3 border border-dashed border-gray-200 rounded-2xl text-xs font-bold text-gray-500 hover:border-indigo-500 hover:text-indigo-600 transition-all flex items-center justify-center gap-1.5 mb-4 cursor-pointer bg-gray-50/50 hover:bg-indigo-50/20"
               >
                 <IconPlus size={15} /> Add lead
               </button>
@@ -248,8 +248,8 @@ export default function Leads() {
             </div>
 
             <div className="p-6 space-y-6">
-              <div className="border-2 border-dashed border-emerald-200 bg-emerald-50/30 rounded-2xl p-10 text-center flex flex-col items-center justify-center cursor-pointer hover:bg-emerald-50/60 transition-colors">
-                <div className="p-3 bg-white rounded-full shadow-xs text-emerald-600 mb-3 border border-emerald-100">
+              <div className="border-2 border-dashed border-indigo-200 bg-indigo-50/30 rounded-2xl p-10 text-center flex flex-col items-center justify-center cursor-pointer hover:bg-indigo-50/60 transition-colors">
+                <div className="p-3 bg-white rounded-full shadow-xs text-indigo-600 mb-3 border border-indigo-100">
                   <IconUpload size={24} />
                 </div>
                 <h4 className="text-sm font-bold text-gray-900">Click to choose a file</h4>
@@ -257,7 +257,7 @@ export default function Leads() {
               </div>
 
               <div className="flex justify-center">
-                <button className="flex items-center gap-1.5 text-xs font-bold text-emerald-600 hover:underline">
+                <button className="flex items-center gap-1.5 text-xs font-bold text-indigo-600 hover:underline">
                   <IconFileSpreadsheet size={16} /> Download CSV template
                 </button>
               </div>
@@ -301,7 +301,7 @@ export default function Leads() {
                   required
                   value={newLeadData.contactName}
                   onChange={(e) => setNewLeadData({...newLeadData, contactName: e.target.value})}
-                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500"
+                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500"
                 />
               </div>
 
@@ -313,7 +313,7 @@ export default function Leads() {
                     placeholder="Company name"
                     value={newLeadData.company}
                     onChange={(e) => setNewLeadData({...newLeadData, company: e.target.value})}
-                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500"
+                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500"
                   />
                 </div>
                 <div>
@@ -323,7 +323,7 @@ export default function Leads() {
                     placeholder="Phone"
                     value={newLeadData.phone}
                     onChange={(e) => setNewLeadData({...newLeadData, phone: e.target.value})}
-                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500"
+                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500"
                   />
                 </div>
               </div>
@@ -335,7 +335,7 @@ export default function Leads() {
                   placeholder="email@example.com"
                   value={newLeadData.email}
                   onChange={(e) => setNewLeadData({...newLeadData, email: e.target.value})}
-                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500"
+                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500"
                 />
               </div>
 
@@ -345,7 +345,7 @@ export default function Leads() {
                   <select 
                     value={newLeadData.source}
                     onChange={(e) => setNewLeadData({...newLeadData, source: e.target.value})}
-                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 focus:outline-none focus:border-emerald-500"
+                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 focus:outline-none focus:border-indigo-500"
                   >
                     <option>Other</option>
                     <option>Website</option>
@@ -360,7 +360,7 @@ export default function Leads() {
                     placeholder="0.00"
                     value={newLeadData.estimatedValue}
                     onChange={(e) => setNewLeadData({...newLeadData, estimatedValue: e.target.value})}
-                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500"
+                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500"
                   />
                 </div>
               </div>
@@ -371,7 +371,7 @@ export default function Leads() {
                   <select 
                     value={newLeadData.stage}
                     onChange={(e) => setNewLeadData({...newLeadData, stage: e.target.value})}
-                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 focus:outline-none focus:border-emerald-500"
+                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 focus:outline-none focus:border-indigo-500"
                   >
                     <option>New</option>
                     <option>Contacted</option>
@@ -392,7 +392,7 @@ export default function Leads() {
                   <select 
                     value={newLeadData.assignTo}
                     onChange={(e) => setNewLeadData({...newLeadData, assignTo: e.target.value})}
-                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 focus:outline-none focus:border-emerald-500"
+                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 focus:outline-none focus:border-indigo-500"
                   >
                     <option>Unassigned</option>
                     <option>Mahim Rana</option>
@@ -407,7 +407,7 @@ export default function Leads() {
                     type="date" 
                     value={newLeadData.followUpDate}
                     onChange={(e) => setNewLeadData({...newLeadData, followUpDate: e.target.value})}
-                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 focus:outline-none focus:border-emerald-500"
+                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 focus:outline-none focus:border-indigo-500"
                   />
                 </div>
                 <div>
@@ -416,7 +416,7 @@ export default function Leads() {
                     type="time" 
                     value={newLeadData.followUpTime}
                     onChange={(e) => setNewLeadData({...newLeadData, followUpTime: e.target.value})}
-                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 focus:outline-none focus:border-emerald-500"
+                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 focus:outline-none focus:border-indigo-500"
                   />
                 </div>
               </div>
@@ -428,7 +428,7 @@ export default function Leads() {
                   placeholder="Anything useful about this lead..."
                   value={newLeadData.notes}
                   onChange={(e) => setNewLeadData({...newLeadData, notes: e.target.value})}
-                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-emerald-500 resize-none"
+                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-2xl text-xs sm:text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-indigo-500 resize-none"
                 />
               </div>
 
@@ -442,7 +442,7 @@ export default function Leads() {
                 </button>
                 <button 
                   type="submit"
-                  className="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl shadow-sm shadow-emerald-200 transition-colors cursor-pointer"
+                  className="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-xl shadow-sm shadow-indigo-200 transition-colors cursor-pointer"
                 >
                   Add Lead
                 </button>

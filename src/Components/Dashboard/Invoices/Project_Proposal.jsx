@@ -7,7 +7,7 @@ import {
 
 export default function Project_Proposal() {
   const [logo, setLogo] = useState(null);
-  const [agencyInfo, setAgencyInfo] = useState('Meer Tech Solution\nSoftware & Web Development Agency\ncontact@meertech.com');
+  const [agencyInfo, setAgencyInfo] = useState('Agency Solutions\nSoftware & Web Development Agency\ncontact@meertech.com');
   const [clientInfo, setClientInfo] = useState('');
   const [documentId, setDocumentId] = useState('PROP-2026-001');
   const [date, setDate] = useState(new Date().toISOString().split('T')[0]);
@@ -105,7 +105,7 @@ export default function Project_Proposal() {
     const element = documentRef.current;
     const opt = {
       margin: 0.3,
-      filename: `Detailed-Project-Proposal-${documentId || 'MeerTech'}.pdf`,
+      filename: `Detailed-Project-Proposal-${documentId || 'AgencySolutions'}.pdf`,
       image: { type: 'jpeg', quality: 0.98 },
       html2canvas: { scale: 2, useCORS: true },
       jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
@@ -114,31 +114,31 @@ export default function Project_Proposal() {
   };
 
   return (
-    <div className="p-4 sm:p-8 max-w-5xl mx-auto flex flex-col gap-8 bg-gray-100 min-h-screen text-gray-900 font-sans caret-emerald-600">
+    <div className="p-4 sm:p-8 max-w-5xl mx-auto flex flex-col gap-8 bg-gray-100 min-h-screen text-gray-900 font-sans caret-indigo-600">
       
       {/* TOP CONTROLS BAR */}
       <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="bg-white p-5 rounded-3xl border border-gray-200 shadow-sm space-y-3">
-          <h3 className="text-xs font-bold uppercase tracking-wider text-emerald-600 flex items-center gap-1.5">
+          <h3 className="text-xs font-bold uppercase tracking-wider text-indigo-600 flex items-center gap-1.5">
             <IconFileText size={16} /> Actions
           </h3>
           <button 
             onClick={handleDownloadPDF}
-            className="w-full bg-emerald-600 hover:bg-emerald-500 text-white p-3.5 rounded-2xl font-bold text-sm flex items-center justify-center gap-2 shadow-md transition-all cursor-pointer"
+            className="w-full bg-indigo-600 hover:bg-indigo-500 text-white p-3.5 rounded-2xl font-bold text-sm flex items-center justify-center gap-2 shadow-md transition-all cursor-pointer"
           >
             <IconDownload size={18} /> Download Proposal PDF
           </button>
         </div>
 
         <div className="bg-white p-5 rounded-3xl border border-gray-200 shadow-sm space-y-4">
-          <h3 className="text-xs font-bold uppercase tracking-wider text-emerald-600">Preferences</h3>
+          <h3 className="text-xs font-bold uppercase tracking-wider text-indigo-600">Preferences</h3>
           <div className="grid grid-cols-2 gap-3">
             <div>
               <label className="text-xs font-semibold text-gray-700 block mb-1">Currency</label>
               <select 
                 value={currency} 
                 onChange={(e) => setCurrency(e.target.value)}
-                className="w-full p-2 border border-gray-300 rounded-xl text-xs focus:outline-none focus:border-emerald-600 bg-white font-medium"
+                className="w-full p-2 border border-gray-300 rounded-xl text-xs focus:outline-none focus:border-indigo-600 bg-white font-medium"
               >
                 <option value="$">USD ($)</option>
                 <option value="€">EUR (€)</option>
@@ -152,7 +152,7 @@ export default function Project_Proposal() {
                 type="text"
                 value={documentId}
                 onChange={(e) => setDocumentId(e.target.value)}
-                className="w-full p-2 border border-gray-300 rounded-xl text-xs focus:outline-none focus:border-emerald-600 bg-white font-bold"
+                className="w-full p-2 border border-gray-300 rounded-xl text-xs focus:outline-none focus:border-indigo-600 bg-white font-bold"
               />
             </div>
           </div>
@@ -170,7 +170,7 @@ export default function Project_Proposal() {
                 <img src={logo} alt="Logo" className="w-full h-full object-cover" />
               ) : (
                 <label className="cursor-pointer text-center p-2">
-                  <IconCloudUpload size={22} className="mx-auto mb-1 text-emerald-600" />
+                  <IconCloudUpload size={22} className="mx-auto mb-1 text-indigo-600" />
                   <span className="text-[10px] font-bold text-gray-600">+ Add Logo</span>
                   <input type="file" accept="image/*" onChange={handleLogoChange} className="hidden" />
                 </label>
@@ -183,7 +183,7 @@ export default function Project_Proposal() {
                 type="text"
                 value={proposalTitle}
                 onChange={(e) => setProposalTitle(e.target.value)}
-                className="w-full sm:text-right text-xs font-bold text-emerald-600 mt-1 border-b border-transparent focus:border-emerald-600 focus:outline-none bg-transparent"
+                className="w-full sm:text-right text-xs font-bold text-indigo-600 mt-1 border-b border-transparent focus:border-indigo-600 focus:outline-none bg-transparent"
               />
               <p className="text-xs text-gray-400 mt-1">Date: {date}</p>
             </div>
@@ -197,7 +197,7 @@ export default function Project_Proposal() {
                 rows="3" 
                 value={agencyInfo} 
                 onChange={(e) => setAgencyInfo(e.target.value)}
-                className="w-full p-3 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-emerald-600 bg-gray-50/50 resize-none font-medium text-gray-800"
+                className="w-full p-3 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-indigo-600 bg-gray-50/50 resize-none font-medium text-gray-800"
               />
             </div>
             <div>
@@ -207,7 +207,7 @@ export default function Project_Proposal() {
                 placeholder="Client Name, Company Name, Email & Address..." 
                 value={clientInfo} 
                 onChange={(e) => setClientInfo(e.target.value)}
-                className="w-full p-3 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-emerald-600 bg-gray-50/50 resize-none font-medium text-gray-800"
+                className="w-full p-3 border border-gray-200 rounded-xl text-xs focus:outline-none focus:border-indigo-600 bg-gray-50/50 resize-none font-medium text-gray-800"
               />
             </div>
           </div>
@@ -218,13 +218,13 @@ export default function Project_Proposal() {
               type="text" 
               value={headings.sec1} 
               onChange={(e) => setHeadings({...headings, sec1: e.target.value})}
-              className="text-sm font-black uppercase tracking-wider text-emerald-700 border-b pb-1 w-full focus:outline-none bg-transparent"
+              className="text-sm font-black uppercase tracking-wider text-indigo-700 border-b pb-1 w-full focus:outline-none bg-transparent"
             />
             <textarea 
               rows="3"
               value={executiveSummary}
               onChange={(e) => setExecutiveSummary(e.target.value)}
-              className="w-full p-3 border border-gray-200 rounded-xl text-xs font-medium bg-gray-50/30 resize-none focus:outline-none focus:border-emerald-600 text-gray-700"
+              className="w-full p-3 border border-gray-200 rounded-xl text-xs font-medium bg-gray-50/30 resize-none focus:outline-none focus:border-indigo-600 text-gray-700"
             />
           </div>
 
@@ -234,7 +234,7 @@ export default function Project_Proposal() {
               type="text" 
               value={headings.sec2} 
               onChange={(e) => setHeadings({...headings, sec2: e.target.value})}
-              className="text-sm font-black uppercase tracking-wider text-emerald-700 border-b pb-1 w-full focus:outline-none bg-transparent"
+              className="text-sm font-black uppercase tracking-wider text-indigo-700 border-b pb-1 w-full focus:outline-none bg-transparent"
             />
             <ul className="list-disc pl-5 text-xs space-y-1 text-gray-700">
               {objectives.map((obj, i) => (
@@ -250,9 +250,9 @@ export default function Project_Proposal() {
                 type="text" 
                 value={headings.sec3} 
                 onChange={(e) => setHeadings({...headings, sec3: e.target.value})}
-                className="text-sm font-black uppercase tracking-wider text-emerald-700 w-full focus:outline-none bg-transparent"
+                className="text-sm font-black uppercase tracking-wider text-indigo-700 w-full focus:outline-none bg-transparent"
               />
-              <button onClick={addScope} className="text-emerald-600 hover:text-emerald-700 text-xs font-bold flex items-center gap-1 cursor-pointer whitespace-nowrap ml-2">
+              <button onClick={addScope} className="text-indigo-600 hover:text-indigo-700 text-xs font-bold flex items-center gap-1 cursor-pointer whitespace-nowrap ml-2">
                 <IconPlus size={14} /> Add Scope
               </button>
             </div>
@@ -297,7 +297,7 @@ export default function Project_Proposal() {
                 type="text" 
                 value={headings.sec4} 
                 onChange={(e) => setHeadings({...headings, sec4: e.target.value})}
-                className="text-sm font-black uppercase tracking-wider text-emerald-700 w-full focus:outline-none bg-transparent"
+                className="text-sm font-black uppercase tracking-wider text-indigo-700 w-full focus:outline-none bg-transparent"
               />
             </div>
 
@@ -352,9 +352,9 @@ export default function Project_Proposal() {
                 type="text" 
                 value={headings.sec5} 
                 onChange={(e) => setHeadings({...headings, sec5: e.target.value})}
-                className="text-sm font-black uppercase tracking-wider text-emerald-700 w-full focus:outline-none bg-transparent"
+                className="text-sm font-black uppercase tracking-wider text-indigo-700 w-full focus:outline-none bg-transparent"
               />
-              <button onClick={addBudget} className="text-emerald-600 hover:text-emerald-700 text-xs font-bold flex items-center gap-1 cursor-pointer whitespace-nowrap ml-2">
+              <button onClick={addBudget} className="text-indigo-600 hover:text-indigo-700 text-xs font-bold flex items-center gap-1 cursor-pointer whitespace-nowrap ml-2">
                 <IconPlus size={14} /> Add Item
               </button>
             </div>
@@ -377,7 +377,7 @@ export default function Project_Proposal() {
                       value={item.cost} 
                       onChange={(e) => handleBudgetChange(index, 'cost', e.target.value)}
                       placeholder="Cost" 
-                      className="w-full p-2 border border-gray-200 rounded-lg text-xs font-bold text-center bg-white text-emerald-600"
+                      className="w-full p-2 border border-gray-200 rounded-lg text-xs font-bold text-center bg-white text-indigo-600"
                     />
                   </div>
                   <div className="col-span-1 text-center">
@@ -391,7 +391,7 @@ export default function Project_Proposal() {
               ))}
             </div>
             <div className="flex justify-end pt-2 text-sm font-bold text-gray-800">
-              Total Investment: <span className="text-emerald-600 ml-2">{currency}{totalBudget.toFixed(2)}</span>
+              Total Investment: <span className="text-indigo-600 ml-2">{currency}{totalBudget.toFixed(2)}</span>
             </div>
           </div>
 
@@ -403,7 +403,7 @@ export default function Project_Proposal() {
                   type="text" 
                   value={sec.title} 
                   onChange={(e) => handleCustomChange(index, 'title', e.target.value)}
-                  className="text-sm font-black uppercase tracking-wider text-emerald-700 border-b pb-1 w-full focus:outline-none bg-transparent"
+                  className="text-sm font-black uppercase tracking-wider text-indigo-700 border-b pb-1 w-full focus:outline-none bg-transparent"
                 />
                 <button onClick={() => removeCustomSection(index)} className="text-rose-500 hover:text-rose-700 cursor-pointer">
                   <IconTrash size={16} />
@@ -413,12 +413,12 @@ export default function Project_Proposal() {
                 rows="3"
                 value={sec.content} 
                 onChange={(e) => handleCustomChange(index, 'content', e.target.value)}
-                className="w-full p-3 border border-gray-200 rounded-xl text-xs font-medium bg-white resize-none focus:outline-none focus:border-emerald-600 text-gray-700"
+                className="w-full p-3 border border-gray-200 rounded-xl text-xs font-medium bg-white resize-none focus:outline-none focus:border-indigo-600 text-gray-700"
               />
             </div>
           ))}
 
-          <button onClick={addCustomSection} className="w-full py-3 border-2 border-dashed border-emerald-300 text-emerald-700 hover:bg-emerald-50 rounded-2xl text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer transition-all">
+          <button onClick={addCustomSection} className="w-full py-3 border-2 border-dashed border-indigo-300 text-indigo-700 hover:bg-indigo-50 rounded-2xl text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer transition-all">
             <IconPlus size={16} /> Add Custom Section / Clause
           </button>
 
@@ -428,20 +428,20 @@ export default function Project_Proposal() {
               type="text" 
               value={headings.sec6} 
               onChange={(e) => setHeadings({...headings, sec6: e.target.value})}
-              className="text-sm font-black uppercase tracking-wider text-emerald-700 border-b pb-1 w-full focus:outline-none bg-transparent"
+              className="text-sm font-black uppercase tracking-wider text-indigo-700 border-b pb-1 w-full focus:outline-none bg-transparent"
             />
             <textarea 
               rows="3"
               value={terms}
               onChange={(e) => setTerms(e.target.value)}
-              className="w-full p-3 border border-gray-200 rounded-xl text-xs font-medium bg-gray-50/30 resize-none focus:outline-none focus:border-emerald-600 text-gray-700"
+              className="w-full p-3 border border-gray-200 rounded-xl text-xs font-medium bg-gray-50/30 resize-none focus:outline-none focus:border-indigo-600 text-gray-700"
             />
           </div>
 
           {/* Sign-off Panel */}
           <div className="pt-8 border-t border-gray-100 grid grid-cols-1 sm:grid-cols-2 gap-12 text-xs">
             <div className="space-y-6">
-              <p className="font-bold text-gray-600">Meer Tech Solution Representative:</p>
+              <p className="font-bold text-gray-600">Agency Solutions Representative:</p>
               <div className="border-b border-gray-400 pb-1 text-gray-400 italic">Signature & Date</div>
             </div>
             <div className="space-y-6">

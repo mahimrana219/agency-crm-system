@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .heading-primary {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+    color: #F8F8F8;
+  }
+}

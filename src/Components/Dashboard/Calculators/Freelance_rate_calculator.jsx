@@ -1,0 +1,227 @@
+import { useState, useRef } from 'react';
+import html2pdf from 'html2pdf.js';
+import { 
+  IconCalculator, IconDownload, IconCloudUpload, 
+  IconFileText, IconCurrencyDollar, IconClock, IconBriefcase 
+} from '@tabler/icons-react';
+
+export default function Freelance_rate_calculator() {
+  const [logo, setLogo] = useState(null);
+  const [agencyInfo, setAgencyInfo] = useState('Meer Tech Solution\nSoftware & Web Development Agency\ncontact@meertech.com');
+  const [documentId, setDocumentId] = useState('RATE-2026-001');
+  const [date, setDate] = useState(new Date().toISOString().split('T')[0]);
+  const [currency, setCurrency] = useState('$');
+
+  // Calculator Inputs
+  const [targetMonthlyIncome, setTargetMonthlyIncome] = useState(3000);
+  const [monthlyExpenses, setMonthlyExpenses] = useState(500);
+  const [billableHoursPerWeek, setBillableHoursPerWeek] = useState(25);
+  const [weeksPerYear, setWeeksPerYear] = useState(48); // accounting for holidays/vacation
+  const [profitMargin, setProfitMargin] = useState(20); // percentage
+
+  const documentRef = useRef();
+
+  const handleLogoChange = (e) => {
+    const file = e.target.files[0];
+    if (file) setLogo(URL.createObjectURL(file));
+  };
+
+  // Calculations
+  const totalAnnualIncomeNeeded = (Number(targetMonthlyIncome) + Number(monthlyExpenses)) * 12;
+  const profitMultiplier = 1 + (Number(profitMargin) / 100);
+  const annualRevenueWithProfit = totalAnnualIncomeNeeded * profitMultiplier;
+  
+  const totalBillableHoursPerYear = Number(billableHoursPerWeek) * Number(weeksPerYear);
+  const calculatedHourlyRate = totalBillableHoursPerYear > 0 ? annualRevenueWithProfit / totalBillableHoursPerYear : 0;
+  
+  const estimatedDailyRate = calculatedHourlyRate * 8;
+  const estimatedWeeklyRate = calculatedHourlyRate * Number(billableHoursPerWeek);
+
+  const handleDownloadPDF = () => {
+    const element = documentRef.current;
+    const opt = {
+      margin: 0.3,
+      filename: `Freelance-Rate-Calculation-${documentId || 'MeerTech'}.pdf`,
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2, useCORS: true },
+      jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+    };
+    html2pdf().from(element).set(opt).save();
+  };
+
+  return (
+    <div className="p-4 sm:p-8 max-w-5xl mx-auto flex flex-col gap-8 bg-gray-100 min-h-screen text-gray-900 font-sans caret-emerald-600">
+      
+      {/* TOP CONTROLS BAR */}
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="bg-white p-5 rounded-3xl border border-gray-200 shadow-sm space-y-3">
+          <h3 className="text-xs font-bold uppercase tracking-wider text-emerald-600 flex items-center gap-1.5">
+            <IconFileText size={16} /> Actions
+          </h3>
+          <button 
+            onClick={handleDownloadPDF}
+            className="w-full bg-emerald-600 hover:bg-emerald-500 text-white p-3.5 rounded-2xl font-bold text-sm flex items-center justify-center gap-2 shadow-md transition-all cursor-pointer"
+          >
+            <IconDownload size={18} /> Download Rate Sheet PDF
+          </button>
+        </div>
+
+        <div className="bg-white p-5 rounded-3xl border border-gray-200 shadow-sm space-y-4">
+          <h3 className="text-xs font-bold uppercase tracking-wider text-emerald-600">Preferences</h3>
+          <div className="grid grid-cols-2 gap-3">
+            <div>
+              <label className="text-xs font-semibold text-gray-700 block mb-1">Currency</label>
+              <select 
+                value={currency} 
+                onChange={(e) => setCurrency(e.target.value)}
+                className="w-full p-2 border border-gray-300 rounded-xl text-xs focus:outline-none focus:border-emerald-600 bg-white font-medium"
+              >
+                <option value="$">USD ($)</option>
+                <option value="€">EUR (€)</option>
+                <option value="£">GBP (£)</option>
+                <option value="PKR">PKR (Rs)</option>
+              </select>
+            </div>
+            <div>
+              <label className="text-xs font-semibold text-gray-700 block mb-1">Sheet ID</label>
+              <input 
+                type="text"
+                value={documentId}
+                onChange={(e) => setDocumentId(e.target.value)}
+                className="w-full p-2 border border-gray-300 rounded-xl text-xs focus:outline-none focus:border-emerald-600 bg-white font-bold"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* LIVE DOCUMENT CONTAINER */}
+      <div className="w-full bg-white p-6 sm:p-12 rounded-3xl border border-gray-200 shadow-xl">
+        <div ref={documentRef} className="bg-white text-gray-900 w-full space-y-8">
+          
+          {/* Header */}
+          <div className="flex flex-col sm:flex-row justify-between items-start gap-4 border-b border-gray-100 pb-8">
+            <div className="w-32 h-24 border-2 border-dashed border-gray-300 rounded-2xl flex flex-col items-center justify-center text-gray-400 relative overflow-hidden bg-gray-50">
+              {logo ? (
+                <img src={logo} alt="Logo" className="w-full h-full object-cover" />
+              ) : (
+                <label className="cursor-pointer text-center p-2">
+                  <IconCloudUpload size={22} className="mx-auto mb-1 text-emerald-600" />
+                  <span className="text-[10px] font-bold text-gray-600">+ Add Logo</span>
+                  <input type="file" accept="image/*" onChange={handleLogoChange} className="hidden" />
+                </label>
+              )}
+            </div>
+
+            <div className="text-left sm:text-right w-full sm:w-auto">
+              <h1 className="text-2xl font-black uppercase tracking-tight text-gray-900">Rate Calculator</h1>
+              <p className="text-xs font-bold text-emerald-600 mt-1">Meer Tech Solution Pricing Strategy</p>
+              <p className="text-xs text-gray-400 mt-1">Date: {date}</p>
+            </div>
+          </div>
+
+          {/* CALCULATOR INPUTS GRID */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            
+            <div className="bg-gray-50/50 p-4 rounded-2xl border border-gray-100 space-y-3">
+              <label className="text-xs font-bold uppercase tracking-wider text-gray-600 flex items-center gap-1.5">
+                <IconCurrencyDollar size={16} className="text-emerald-600" /> Target Monthly Net Income
+              </label>
+              <input 
+                type="number"
+                value={targetMonthlyIncome}
+                onChange={(e) => setTargetMonthlyIncome(e.target.value)}
+                className="w-full p-2.5 border border-gray-200 rounded-xl text-xs font-bold bg-white text-gray-900 focus:outline-none focus:border-emerald-600"
+              />
+            </div>
+
+            <div className="bg-gray-50/50 p-4 rounded-2xl border border-gray-100 space-y-3">
+              <label className="text-xs font-bold uppercase tracking-wider text-gray-600 flex items-center gap-1.5">
+                <IconCurrencyDollar size={16} className="text-rose-600" /> Estimated Monthly Business Expenses
+              </label>
+              <input 
+                type="number"
+                value={monthlyExpenses}
+                onChange={(e) => setMonthlyExpenses(e.target.value)}
+                className="w-full p-2.5 border border-gray-200 rounded-xl text-xs font-bold bg-white text-gray-900 focus:outline-none focus:border-emerald-600"
+              />
+            </div>
+
+            <div className="bg-gray-50/50 p-4 rounded-2xl border border-gray-100 space-y-3">
+              <label className="text-xs font-bold uppercase tracking-wider text-gray-600 flex items-center gap-1.5">
+                <IconClock size={16} className="text-emerald-600" /> Billable Hours Per Week
+              </label>
+              <input 
+                type="number"
+                value={billableHoursPerWeek}
+                onChange={(e) => setBillableHoursPerWeek(e.target.value)}
+                className="w-full p-2.5 border border-gray-200 rounded-xl text-xs font-bold bg-white text-gray-900 focus:outline-none focus:border-emerald-600"
+              />
+            </div>
+
+            <div className="bg-gray-50/50 p-4 rounded-2xl border border-gray-100 space-y-3">
+              <label className="text-xs font-bold uppercase tracking-wider text-gray-600 flex items-center gap-1.5">
+                <IconBriefcase size={16} className="text-emerald-600" /> Working Weeks Per Year
+              </label>
+              <input 
+                type="number"
+                value={weeksPerYear}
+                onChange={(e) => setWeeksPerYear(e.target.value)}
+                className="w-full p-2.5 border border-gray-200 rounded-xl text-xs font-bold bg-white text-gray-900 focus:outline-none focus:border-emerald-600"
+              />
+            </div>
+
+          </div>
+
+          {/* PROFIT MARGIN SLIDER */}
+          <div className="bg-emerald-50/40 p-4 rounded-2xl border border-emerald-100 space-y-2">
+            <div className="flex justify-between items-center text-xs font-bold">
+              <span className="text-emerald-900 uppercase tracking-wider">Desired Profit Margin Buffer</span>
+              <span className="text-emerald-700">{profitMargin}%</span>
+            </div>
+            <input 
+              type="range"
+              min="0"
+              max="50"
+              value={profitMargin}
+              onChange={(e) => setProfitMargin(e.target.value)}
+              className="w-full accent-emerald-600 cursor-pointer"
+            />
+          </div>
+
+          {/* RESULTS DISPLAY PANEL */}
+          <div className="bg-linear-to-br from-gray-900 to-gray-800 text-white p-6 sm:p-8 rounded-3xl space-y-6 shadow-lg">
+            <h3 className="text-xs font-extrabold uppercase tracking-widest text-emerald-400 flex items-center gap-2">
+              <IconCalculator size={18} /> Calculated Rate Breakdown
+            </h3>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-2">
+              <div className="space-y-1 border-b sm:border-b-0 sm:border-r border-gray-700 pb-4 sm:pb-0 sm:pr-4">
+                <p className="text-[11px] font-semibold text-gray-400 uppercase tracking-wider">Recommended Hourly Rate</p>
+                <p className="text-2xl sm:text-3xl font-black text-emerald-400">{currency}{calculatedHourlyRate.toFixed(2)}<span className="text-xs text-gray-400 font-normal"> /hr</span></p>
+              </div>
+
+              <div className="space-y-1 border-b sm:border-b-0 sm:border-r border-gray-700 pb-4 sm:pb-0 sm:pr-4">
+                <p className="text-[11px] font-semibold text-gray-400 uppercase tracking-wider">Estimated Daily Rate (8h)</p>
+                <p className="text-2xl sm:text-3xl font-black text-white">{currency}{estimatedDailyRate.toFixed(2)}</p>
+              </div>
+
+              <div className="space-y-1">
+                <p className="text-[11px] font-semibold text-gray-400 uppercase tracking-wider">Weekly Billable Estimate</p>
+                <p className="text-2xl sm:text-3xl font-black text-white">{currency}{estimatedWeeklyRate.toFixed(2)}</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Sign-off / Footer */}
+          <div className="pt-6 border-t border-gray-100 flex justify-between items-center text-xs text-gray-500">
+            <p>Meer Tech Solution Rate Strategy Generator</p>
+            <p className="font-bold text-gray-700">Optimized for Agency Growth</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  );
+}
